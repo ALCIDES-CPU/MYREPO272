@@ -126,17 +126,18 @@ export function AppointmentForm() {
   const progressPercentage = (step / 4) * 100
 
   const disableDates = (dateToCheck: Date) => {
-    // Datas disponíveis: 6 a 13 de março de 2026
-    const startDate = new Date(2026, 2, 6) // 6 de março de 2026
-    const endDate = new Date(2026, 2, 13) // 13 de março de 2026
+    // Datas disponiveis: 13 a 17 de abril de 2026
+    const startDate = new Date(2026, 3, 13) // 13 de abril de 2026
+    const endDate = new Date(2026, 3, 17) // 17 de abril de 2026
 
     // Bloquear fins de semana
     const day = dateToCheck.getDay()
     if (day === 0 || day === 6) return true
 
     // Bloquear datas fora do intervalo permitido
-    dateToCheck.setHours(0, 0, 0, 0)
-    return dateToCheck < startDate || dateToCheck > endDate
+    const checkDate = new Date(dateToCheck)
+    checkDate.setHours(0, 0, 0, 0)
+    return checkDate < startDate || checkDate > endDate
   }
 
   return (
@@ -590,7 +591,7 @@ export function AppointmentForm() {
                   </SelectItem>
                   <SelectItem value="odivelas">Odivelas (Loja de Cidadão) — Centro Comercial Strada Outlet</SelectItem>
                   <SelectItem value="ponta-delgada">Ponta Delgada — Rua Marquês da Praia e Monforte, 10</SelectItem>
-                  <SelectItem value="portalegre">Portalegre — Avenida de Santo António, 12</SelectItem>
+                  <SelectItem value="portalegre">Portalegre — Avenida de Santo Antonio, 12</SelectItem>
                   <SelectItem value="portimao">Portimão — Quinta do Morais, Lote 11, Fração A</SelectItem>
                   <SelectItem value="porto">Porto — Avenida de França, 316, Edifício Capitólio, Loja 57</SelectItem>
                   <SelectItem value="porto-santo">Porto Santo — Avenida Henrique Vieira de Castro, 14</SelectItem>

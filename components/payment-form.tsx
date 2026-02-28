@@ -186,7 +186,7 @@ export function PaymentForm() {
               </div>
             </div>
 
-            <Button onClick={handlePayment} disabled={isProcessing} className="w-full rounded-full" size="lg">
+            <Button onClick={handlePayment} disabled={isProcessing} className="w-full rounded-full bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white" size="lg">
               {isProcessing ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />A processar pagamento...

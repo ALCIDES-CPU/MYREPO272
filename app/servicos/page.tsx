@@ -9,47 +9,47 @@ const services = [
   {
     icon: FileText,
     title: "Agendamento Geral AIMA",
-    description: "Marcação de atendimento para serviços gerais da AIMA",
+    description: "Marcacao de atendimento para servicos gerais da AIMA",
     duration: "30-45 minutos",
-    cost: "83,10 €",
-    documents: ["Documento de identificação"],
-    color: "from-[#4A1D6A] to-[#5A2D7A]",
+    cost: "83,10 EUR",
+    documents: ["Documento de identificacao"],
+    color: "#4A1D6A",
   },
   {
     icon: FileText,
-    title: "Renovação de Autorização de Residência",
-    description: "Renovação de autorização de residência temporária ou permanente",
+    title: "Renovacao de Autorizacao de Residencia",
+    description: "Renovacao de autorizacao de residencia temporaria ou permanente",
     duration: "45-60 minutos",
-    cost: "83,10 €",
-    documents: ["Passaporte/CC", "Autorização anterior"],
-    color: "from-[#8B1D5C] to-[#9B2D6C]",
+    cost: "83,10 EUR",
+    documents: ["Passaporte/CC", "Autorizacao anterior"],
+    color: "#C74B8E",
   },
   {
     icon: Home,
-    title: "Primeira Autorização de Residência",
-    description: "Pedido de primeira autorização de residência em Portugal",
+    title: "Primeira Autorizacao de Residencia",
+    description: "Pedido de primeira autorizacao de residencia em Portugal",
     duration: "60-90 minutos",
-    cost: "83,10 €",
-    documents: ["Passaporte", "Visto", "Contrato de trabalho/estudos", "Seguro de saúde"],
-    color: "from-[#9B5BA5] to-[#AB6BB5]",
+    cost: "83,10 EUR",
+    documents: ["Passaporte", "Visto", "Contrato de trabalho/estudos", "Seguro de saude"],
+    color: "#9B5BA5",
   },
   {
     icon: Users,
     title: "Reagrupamento Familiar",
     description: "Pedido de reagrupamento familiar para residentes em Portugal",
     duration: "45-60 minutos",
-    cost: "83,10 €",
-    documents: ["Documentos de identificação", "Autorização do requerente", "Prova de parentesco"],
-    color: "from-[#C74B8E] to-[#D75B9E]",
+    cost: "83,10 EUR",
+    documents: ["Documentos de identificacao", "Autorizacao do requerente", "Prova de parentesco"],
+    color: "#4A1D6A",
   },
   {
     icon: Info,
-    title: "Manifestação de interresse/ CPLP",
-    description: "Esclarecimento de dúvidas sobre processos e serviços AIMA e Emissão da CPLP",
+    title: "Manifestacao de Interesse / CPLP",
+    description: "Esclarecimento de duvidas sobre processos e servicos AIMA e Emissao da CPLP",
     duration: "15-30 minutos",
-    cost: "83,10 €",
-    documents: ["Documento de identificação"],
-    color: "from-[#4A1D6A] to-[#8B1D5C]",
+    cost: "83,10 EUR",
+    documents: ["Documento de identificacao"],
+    color: "#C74B8E",
   },
 ]
 
@@ -60,54 +60,61 @@ export default function ServicosPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-[#4A1D6A] to-[#8B1D5C] py-16 md:py-24">
+        <section className="bg-[#4A1D6A] py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
-              Serviços Disponíveis
-            </span>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white">Tipos de Serviços</h1>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
-              Conheça os serviços disponíveis para agendamento online. Cada serviço tem requisitos específicos de
-              documentação.
+            <div className="flex items-center justify-center gap-2 mb-5">
+              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
+              <span className="text-sm font-medium tracking-wide uppercase text-white/60">
+                Servicos Disponiveis
+              </span>
+              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white text-balance">Tipos de Servicos</h1>
+            <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+              Conheca os servicos disponiveis para agendamento online. Cada servico tem requisitos especificos de
+              documentacao.
             </p>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 md:py-20">
+        <section className="py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {services.map((service, index) => (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                  <CardHeader className="pb-4">
+                <Card key={index} className="group border border-border hover:border-[#4A1D6A]/20 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <CardHeader className="pb-3">
                     <div className="flex items-start gap-4">
-                      <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
-                        <service.icon className="w-7 h-7 text-white" />
+                      <div
+                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
+                        style={{ backgroundColor: `${service.color}12` }}
+                      >
+                        <service.icon className="w-6 h-6" style={{ color: service.color }} />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                        <CardDescription className="text-base">{service.description}</CardDescription>
+                        <CardTitle className="text-lg mb-1">{service.title}</CardTitle>
+                        <CardDescription className="text-sm">{service.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-5">
+                  <CardContent className="flex flex-col gap-4">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                        <Clock className="w-4 h-4" />
-                        <span className="text-sm">{service.duration}</span>
+                      <div className="flex items-center gap-2 text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full">
+                        <Clock className="w-3.5 h-3.5" />
+                        <span className="text-xs">{service.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 font-bold text-lg bg-gradient-to-r from-[#4A1D6A] to-[#8B1D5C] text-transparent bg-clip-text">
-                        <Euro className="w-5 h-5 text-[#4A1D6A]" />
+                      <div className="flex items-center gap-1.5 font-bold text-base" style={{ color: service.color }}>
+                        <Euro className="w-4 h-4" />
                         <span>{service.cost}</span>
                       </div>
                     </div>
 
-                    <div className="bg-secondary/50 rounded-xl p-4">
-                      <h4 className="font-semibold text-sm mb-3 text-foreground">Documentos Necessários:</h4>
-                      <ul className="space-y-2">
+                    <div className="bg-muted/40 rounded-xl p-4">
+                      <h4 className="font-semibold text-xs mb-2 text-foreground uppercase tracking-wider">Documentos Necessarios:</h4>
+                      <ul className="flex flex-col gap-1.5">
                         {service.documents.map((doc, docIndex) => (
                           <li key={docIndex} className="text-sm text-muted-foreground flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#8B1D5C]" />
+                            <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: service.color }} />
                             <span>{doc}</span>
                           </li>
                         ))}
@@ -119,16 +126,16 @@ export default function ServicosPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-16">
-              <div className="bg-gradient-to-br from-secondary/50 to-muted rounded-3xl p-10 md:p-14 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">Pronto para Agendar?</h3>
-                <p className="text-muted-foreground mb-8 leading-relaxed max-w-xl mx-auto text-lg">
-                  Escolha o serviço que necessita e complete o agendamento online de forma rápida e segura.
+            <div className="mt-14">
+              <div className="bg-muted/60 border border-border rounded-3xl p-10 md:p-14 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground text-balance">Pronto para Agendar?</h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed max-w-xl mx-auto">
+                  Escolha o servico que necessita e complete o agendamento online de forma rapida e segura.
                 </p>
-                <Button asChild size="lg" className="shadow-lg bg-gradient-to-r from-[#4A1D6A] to-[#8B1D5C] hover:opacity-90">
+                <Button asChild size="lg" className="shadow-lg bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-10">
                   <Link href="/agendar" className="flex items-center gap-2">
                     Agendar Atendimento
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </div>

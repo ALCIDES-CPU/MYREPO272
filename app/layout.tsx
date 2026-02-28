@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "AIMA - Agendamento de Servicos",
   description:
-    "Plataforma de agendamento para servicos da Agencia para a Integracao, Migracoes e Asilo",
+    "Plataforma de agendamento para servicos da Agencia para a Integracao, Migracoes e Asilo. Agende o seu atendimento de forma rapida e segura.",
   generator: "v0.app",
   icons: {
     icon: "/logo-aima.png",
@@ -22,6 +22,7 @@ export const viewport: Viewport = {
   themeColor: "#4A1D6A",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
