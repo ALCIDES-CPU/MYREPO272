@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { FileText, Users, Home, Info, Clock, Euro, ArrowRight } from "lucide-react"
+import { FileText, Users, Home, Info, Clock, ArrowRight } from "lucide-react"
 
 const services = [
   {
@@ -11,7 +11,6 @@ const services = [
     title: "Agendamento Geral AIMA",
     description: "Marcacao de atendimento para servicos gerais da AIMA",
     duration: "30-45 minutos",
-    cost: "83,10 EUR",
     documents: ["Documento de identificacao"],
     color: "#4A1D6A",
   },
@@ -20,7 +19,6 @@ const services = [
     title: "Renovacao de Autorizacao de Residencia",
     description: "Renovacao de autorizacao de residencia temporaria ou permanente",
     duration: "45-60 minutos",
-    cost: "83,10 EUR",
     documents: ["Passaporte/CC", "Autorizacao anterior"],
     color: "#C74B8E",
   },
@@ -29,7 +27,6 @@ const services = [
     title: "Primeira Autorizacao de Residencia",
     description: "Pedido de primeira autorizacao de residencia em Portugal",
     duration: "60-90 minutos",
-    cost: "83,10 EUR",
     documents: ["Passaporte", "Visto", "Contrato de trabalho/estudos", "Seguro de saude"],
     color: "#9B5BA5",
   },
@@ -38,7 +35,6 @@ const services = [
     title: "Reagrupamento Familiar",
     description: "Pedido de reagrupamento familiar para residentes em Portugal",
     duration: "45-60 minutos",
-    cost: "83,10 EUR",
     documents: ["Documentos de identificacao", "Autorizacao do requerente", "Prova de parentesco"],
     color: "#4A1D6A",
   },
@@ -47,7 +43,6 @@ const services = [
     title: "Manifestacao de Interesse / CPLP",
     description: "Esclarecimento de duvidas sobre processos e servicos AIMA e Emissao da CPLP",
     duration: "15-30 minutos",
-    cost: "83,10 EUR",
     documents: ["Documento de identificacao"],
     color: "#C74B8E",
   },
@@ -62,17 +57,12 @@ export default function ServicosPage() {
         {/* Hero Section */}
         <section className="bg-[#4A1D6A] py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex items-center justify-center gap-2 mb-5">
-              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-              <span className="text-sm font-medium tracking-wide uppercase text-white/60">
-                Servicos Disponiveis
-              </span>
-              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-            </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white text-balance">Tipos de Servicos</h1>
-            <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Conheca os servicos disponiveis para agendamento online. Cada servico tem requisitos especificos de
-              documentacao.
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 block mb-4">
+              Servicos Disponiveis
+            </span>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white tracking-tight text-balance">Tipos de Servicos</h1>
+            <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
+              Conheca os servicos disponiveis para agendamento online. Cada servico tem requisitos especificos de documentacao.
             </p>
           </div>
         </section>
@@ -80,33 +70,27 @@ export default function ServicosPage() {
         {/* Services Grid */}
         <section className="py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {services.map((service, index) => (
-                <Card key={index} className="group border border-border hover:border-[#4A1D6A]/20 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <Card key={index} className="group border border-border hover:border-[#4A1D6A]/20 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden rounded-2xl">
                   <CardHeader className="pb-3">
                     <div className="flex items-start gap-4">
                       <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
-                        style={{ backgroundColor: `${service.color}12` }}
+                        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105"
+                        style={{ backgroundColor: `${service.color}10` }}
                       >
-                        <service.icon className="w-6 h-6" style={{ color: service.color }} />
+                        <service.icon className="w-5 h-5" style={{ color: service.color }} />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-lg mb-1">{service.title}</CardTitle>
+                        <CardTitle className="text-base mb-1">{service.title}</CardTitle>
                         <CardDescription className="text-sm">{service.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent className="flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full">
-                        <Clock className="w-3.5 h-3.5" />
-                        <span className="text-xs">{service.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 font-bold text-base" style={{ color: service.color }}>
-                        <Euro className="w-4 h-4" />
-                        <span>{service.cost}</span>
-                      </div>
+                    <div className="flex items-center gap-2 text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full w-fit">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span className="text-xs">{service.duration}</span>
                     </div>
 
                     <div className="bg-muted/40 rounded-xl p-4">
@@ -127,12 +111,12 @@ export default function ServicosPage() {
 
             {/* CTA Section */}
             <div className="mt-14">
-              <div className="bg-muted/60 border border-border rounded-3xl p-10 md:p-14 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground text-balance">Pronto para Agendar?</h3>
+              <div className="bg-muted/50 border border-border rounded-3xl p-10 md:p-14 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-foreground tracking-tight text-balance">Pronto para agendar?</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed max-w-xl mx-auto">
                   Escolha o servico que necessita e complete o agendamento online de forma rapida e segura.
                 </p>
-                <Button asChild size="lg" className="shadow-lg bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-10">
+                <Button asChild size="lg" className="shadow-lg bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-10 h-12 text-sm font-semibold">
                   <Link href="/agendar" className="flex items-center gap-2">
                     Agendar Atendimento
                     <ArrowRight className="w-4 h-4" />

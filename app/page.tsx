@@ -1,10 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Calendar, FileText, CreditCard, CheckCircle, Clock, Shield, ArrowRight, Users } from "lucide-react"
+import { Calendar, FileText, CreditCard, CheckCircle, Clock, Shield, ArrowRight, Users, MapPin, Phone } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -12,38 +11,26 @@ export default function HomePage() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Hero Section with Banner */}
-        <section className="relative overflow-hidden">
-          <div className="relative w-full h-[320px] md:h-[420px] lg:h-[480px]">
-            <Image
-              src="/images/banner.jpeg"
-              alt="Banner AIMA - Agencia para a Integracao, Migracoes e Asilo"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#4A1D6A]/40" />
-          </div>
-
-          {/* Content below banner */}
-          <div className="bg-[#4A1D6A] pb-16 pt-10 md:pb-20 md:pt-14">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl">
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="inline-block h-1 w-12 bg-[#C74B8E] rounded-full" />
-                  <span className="text-sm font-medium tracking-wide uppercase text-white/70">
-                    Plataforma Oficial AIMA
+        {/* Hero Section */}
+        <section className="relative bg-[#4A1D6A] overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px] lg:min-h-[600px]">
+              {/* Left - Text Content */}
+              <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-16 lg:py-20 order-2 lg:order-1">
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="inline-block h-[3px] w-10 bg-[#C74B8E] rounded-full" />
+                  <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/50">
+                    Plataforma Oficial
                   </span>
                 </div>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-5 text-white leading-tight text-balance">
-                  Agendamento de Servicos AIMA
+                <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold mb-6 text-white leading-[1.1] tracking-tight text-balance">
+                  Agende o seu atendimento na AIMA
                 </h1>
-                <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed max-w-2xl">
-                  Agende o seu atendimento de forma rapida e segura. Submita documentos, efetue pagamentos e acompanhe o
-                  status do seu processo online.
+                <p className="text-base md:text-lg text-white/65 mb-10 leading-relaxed max-w-lg">
+                  Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe tudo online.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button asChild size="lg" className="text-base font-semibold bg-[#C74B8E] text-white hover:bg-[#B03A7D] shadow-lg rounded-full px-8">
+                  <Button asChild size="lg" className="text-sm font-semibold bg-[#C74B8E] text-white hover:bg-[#B03A7D] shadow-lg shadow-[#C74B8E]/20 rounded-full px-8 h-12">
                     <Link href="/agendar" className="flex items-center gap-2">
                       Agendar Agora
                       <ArrowRight className="w-4 h-4" />
@@ -53,230 +40,241 @@ export default function HomePage() {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="text-base bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/60 rounded-full px-8"
+                    className="text-sm bg-transparent border border-white/20 text-white hover:bg-white/10 hover:border-white/40 rounded-full px-8 h-12"
                   >
                     <Link href="/servicos">Ver Servicos</Link>
                   </Button>
                 </div>
               </div>
+
+              {/* Right - Banner Image */}
+              <div className="relative order-1 lg:order-2 h-[240px] sm:h-[300px] lg:h-auto">
+                <Image
+                  src="/images/banner.jpeg"
+                  alt="Banner AIMA - Agencia para a Integracao, Migracoes e Asilo"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/40 to-transparent hidden lg:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4A1D6A] to-transparent lg:hidden" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Stats Bar */}
-        <section className="bg-background relative z-10">
+        {/* Trust Indicators */}
+        <section className="bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 -mt-8 md:-mt-10">
-              <div className="bg-card rounded-t-2xl sm:rounded-tl-2xl sm:rounded-tr-none shadow-xl p-6 md:p-8 border border-border flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#4A1D6A]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-[#4A1D6A]" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 -mt-8 md:-mt-10 relative z-10">
+              {[
+                { icon: Shield, label: "Seguro", desc: "Dados encriptados", color: "#4A1D6A" },
+                { icon: Clock, label: "Rapido", desc: "Sem filas de espera", color: "#C74B8E" },
+                { icon: CheckCircle, label: "Online", desc: "Disponivel 24/7", color: "#9B5BA5" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className={`bg-card shadow-xl p-6 md:p-7 flex items-center gap-4 border border-border ${
+                    i === 0 ? "rounded-t-2xl sm:rounded-tl-2xl sm:rounded-tr-none" : ""
+                  } ${i === 2 ? "rounded-b-2xl sm:rounded-br-2xl sm:rounded-bl-none" : ""} ${
+                    i === 1 ? "border-y sm:border" : ""
+                  }`}
+                >
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: `${item.color}10` }}
+                  >
+                    <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{item.label}</p>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold text-foreground text-lg">Seguro</p>
-                  <p className="text-sm text-muted-foreground">Dados protegidos</p>
-                </div>
-              </div>
-              <div className="bg-card shadow-xl p-6 md:p-8 border-y sm:border border-border flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#C74B8E]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-[#C74B8E]" />
-                </div>
-                <div>
-                  <p className="font-bold text-foreground text-lg">Rapido</p>
-                  <p className="text-sm text-muted-foreground">Sem filas de espera</p>
-                </div>
-              </div>
-              <div className="bg-card rounded-b-2xl sm:rounded-br-2xl sm:rounded-bl-none shadow-xl p-6 md:p-8 border border-border flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#9B5BA5]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-6 h-6 text-[#9B5BA5]" />
-                </div>
-                <div>
-                  <p className="font-bold text-foreground text-lg">Online</p>
-                  <p className="text-sm text-muted-foreground">Disponivel 24/7</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* How it Works */}
-        <section className="py-20 md:py-28 bg-background">
+        <section className="py-24 md:py-32 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-                <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">
-                  Processo Simplificado
-                </span>
-                <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">Como Funciona</h2>
+            <div className="max-w-xl mb-16">
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-3">
+                Processo Simples
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+                Como funciona
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
               {[
                 {
                   step: "01",
                   icon: Calendar,
-                  title: "Agende o Atendimento",
-                  description: "Escolha o tipo de servico, data e local de sua preferencia de forma simples e intuitiva.",
-                  color: "#4A1D6A",
+                  title: "Agende",
+                  description: "Escolha o servico, data, hora e local do seu atendimento.",
                 },
                 {
                   step: "02",
                   icon: FileText,
                   title: "Submeta Documentos",
-                  description: "Faca upload dos documentos necessarios de forma segura e organizada.",
-                  color: "#C74B8E",
+                  description: "Faca upload dos documentos necessarios de forma segura.",
                 },
                 {
                   step: "03",
                   icon: CreditCard,
-                  title: "Efetue o Pagamento",
-                  description: "Pagamento seguro online atraves da plataforma Stripe. Valor: 83,10 EUR.",
-                  color: "#9B5BA5",
+                  title: "Confirme",
+                  description: "Efetue o pagamento e receba a confirmacao por e-mail.",
                 },
               ].map((item) => (
-                <Card
+                <div
                   key={item.step}
-                  className="group border border-border hover:border-[#4A1D6A]/20 shadow-sm hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                  className="bg-card p-8 md:p-10 group hover:bg-muted/30 transition-colors"
                 >
-                  <div className="absolute top-4 right-4 text-6xl font-black text-muted/60 select-none">
+                  <span className="text-5xl font-black text-border block mb-8 group-hover:text-[#C74B8E]/20 transition-colors">
                     {item.step}
+                  </span>
+                  <div className="w-12 h-12 rounded-xl bg-[#4A1D6A]/8 flex items-center justify-center mb-5">
+                    <item.icon className="w-5 h-5 text-[#4A1D6A]" />
                   </div>
-                  <CardHeader className="pb-3 relative">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
-                      style={{ backgroundColor: `${item.color}15` }}
-                    >
-                      <item.icon className="w-7 h-7" style={{ color: item.color }} />
-                    </div>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base leading-relaxed">
-                      {item.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services Preview */}
-        <section className="py-20 md:py-28 bg-muted/50">
+        {/* Services */}
+        <section className="py-24 md:py-32 bg-muted/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
               <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-                  <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">
-                    Servicos Disponiveis
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
-                  Tipos de Servicos
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-3">
+                  Servicos Disponiveis
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+                  Tipos de servicos
                 </h2>
               </div>
-              <Button asChild variant="outline" className="bg-transparent w-fit rounded-full">
+              <Button asChild variant="ghost" className="w-fit text-sm text-muted-foreground hover:text-foreground -mb-1">
                 <Link href="/servicos" className="flex items-center gap-2">
-                  Ver todos os servicos
-                  <ArrowRight className="w-4 h-4" />
+                  Ver todos
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </Button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { icon: FileText, title: "Agendamento Geral", color: "#4A1D6A" },
-                { icon: FileText, title: "Renovacao de AR", color: "#C74B8E" },
-                { icon: Users, title: "Reagrupamento Familiar", color: "#9B5BA5" },
-                { icon: Calendar, title: "CPLP / Manifestacao", color: "#4A1D6A" },
+                { icon: FileText, title: "Agendamento Geral", desc: "Servicos gerais da AIMA" },
+                { icon: FileText, title: "Renovacao de AR", desc: "Autorizacao de residencia" },
+                { icon: Users, title: "Reagrupamento Familiar", desc: "Reunificacao familiar" },
+                { icon: Calendar, title: "CPLP / Manifestacao", desc: "Interesse e emissao CPLP" },
               ].map((service, i) => (
-                <Link key={i} href="/agendar">
-                  <Card className="group border border-border hover:border-[#4A1D6A]/20 h-full shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <CardContent className="pt-6 pb-6 flex flex-col items-start gap-4">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110"
-                        style={{ backgroundColor: `${service.color}12` }}
-                      >
-                        <service.icon className="w-6 h-6" style={{ color: service.color }} />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">{service.title}</h3>
-                        <p className="text-sm font-bold" style={{ color: service.color }}>
-                          83,10 EUR
-                        </p>
-                      </div>
-                      <span className="text-xs text-muted-foreground flex items-center gap-1 group-hover:text-[#C74B8E] transition-colors">
-                        Agendar agora <ArrowRight className="w-3 h-3" />
-                      </span>
-                    </CardContent>
-                  </Card>
+                <Link key={i} href="/agendar" className="group">
+                  <div className="bg-card border border-border rounded-2xl p-6 h-full hover:border-[#4A1D6A]/25 hover:shadow-lg transition-all duration-300">
+                    <div className="w-11 h-11 rounded-xl bg-[#4A1D6A]/8 flex items-center justify-center mb-5 group-hover:bg-[#4A1D6A]/12 transition-colors">
+                      <service.icon className="w-5 h-5 text-[#4A1D6A]" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-1 text-sm">{service.title}</h3>
+                    <p className="text-xs text-muted-foreground mb-4">{service.desc}</p>
+                    <span className="text-xs font-medium text-[#C74B8E] flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Agendar <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 md:py-28 bg-[#4A1D6A]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
-                Plataforma Oficial da AIMA
-              </h2>
-              <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
-                Destinada a agilizacao do processo de legalizacao em Portugal
-              </p>
-            </div>
+        {/* Benefits */}
+        <section className="py-24 md:py-32 bg-[#4A1D6A] relative overflow-hidden">
+          {/* Subtle decorative element */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C74B8E]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: CheckCircle,
-                  title: "Rapido e Conveniente",
-                  description: "Agende o seu atendimento a qualquer hora, sem filas e sem complicacoes.",
-                },
-                {
-                  icon: Clock,
-                  title: "Acompanhamento em Tempo Real",
-                  description: "Consulte o status do seu agendamento a qualquer momento atraves da plataforma.",
-                },
-                {
-                  icon: Shield,
-                  title: "Seguro e Confiavel",
-                  description: "Seus dados e documentos protegidos com a mais alta tecnologia de criptografia.",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-white/[0.07] backdrop-blur-sm rounded-2xl p-7 hover:bg-white/[0.12] transition-colors border border-white/10"
-                >
-                  <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-5">
-                    <item.icon className="w-6 h-6 text-[#C74B8E]" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              <div>
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 block mb-3">
+                  Porque escolher-nos
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">
+                  Plataforma oficial da AIMA
+                </h2>
+                <p className="text-white/55 leading-relaxed mb-10">
+                  Destinada a agilizacao do processo de legalizacao em Portugal. Agende o seu atendimento de forma comoda e segura.
+                </p>
+                <Button asChild size="lg" className="text-sm font-semibold bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full px-8 h-12">
+                  <Link href="/agendar" className="flex items-center gap-2">
+                    Comecar agora
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    icon: CheckCircle,
+                    title: "Rapido e Conveniente",
+                    description: "Agende a qualquer hora, sem filas e sem complicacoes.",
+                  },
+                  {
+                    icon: MapPin,
+                    title: "Multiplos Centros",
+                    description: "Escolha entre diversos centros de atendimento em todo o pais.",
+                  },
+                  {
+                    icon: Shield,
+                    title: "Seguro e Confiavel",
+                    description: "Dados e documentos protegidos com encriptacao avancada.",
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-6 border border-white/[0.08] hover:bg-white/[0.10] transition-colors"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-[#C74B8E]/15 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <item.icon className="w-5 h-5 text-[#C74B8E]" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                        <p className="text-sm text-white/50 leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-lg mb-2 text-white">{item.title}</h3>
-                  <p className="text-white/65 leading-relaxed text-sm">{item.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 md:py-28 bg-background">
+        {/* CTA */}
+        <section className="py-24 md:py-32 bg-background">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-muted/60 border border-border rounded-3xl p-10 md:p-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground text-balance">Pronto para Agendar?</h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed max-w-xl mx-auto">
-                Comece agora e garanta o seu atendimento na AIMA. Processo simples, rapido e seguro.
-              </p>
-              <Button asChild size="lg" className="text-base shadow-lg bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-10">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-4">
+              Comece Agora
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground tracking-tight text-balance">
+              Pronto para agendar o seu atendimento?
+            </h2>
+            <p className="text-muted-foreground mb-10 leading-relaxed max-w-lg mx-auto">
+              Processo simples, rapido e seguro. Em poucos minutos garanta o seu lugar.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button asChild size="lg" className="text-sm font-semibold shadow-lg bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-10 h-12">
                 <Link href="/agendar" className="flex items-center gap-2">
                   Agendar Atendimento
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-sm bg-transparent rounded-full px-10 h-12">
+                <Link href="/faq">Perguntas Frequentes</Link>
               </Button>
             </div>
           </div>
