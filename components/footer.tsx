@@ -8,11 +8,11 @@ export function Footer() {
     <footer className="bg-[#2D0E47] text-white mt-auto">
       {/* Partners Section */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-xs font-medium text-center mb-6 text-white/50 uppercase tracking-widest">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <p className="text-xs font-medium text-center mb-4 sm:mb-6 text-white/50 uppercase tracking-widest">
             Apoios e Financiamento
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 items-center justify-items-center">
             {[
               {
                 src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/R%20PT-UsUcqcgTWpGh4Iuh8XZV15jxd2SMVO.png",
@@ -42,14 +42,14 @@ export function Footer() {
             ].map((partner, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-lg p-3 hover:shadow-md transition-shadow ${i === 4 ? "col-span-2 md:col-span-1" : ""}`}
+                className={`bg-white rounded-lg p-2 sm:p-3 hover:shadow-md transition-shadow ${i === 4 ? "col-span-2 sm:col-span-1" : ""}`}
               >
                 <Image
                   src={partner.src}
                   alt={partner.alt}
                   width={partner.width}
                   height={50}
-                  className="h-8 w-auto"
+                  className="h-6 sm:h-8 w-auto"
                 />
               </div>
             ))}
@@ -58,9 +58,9 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="sm:col-span-2 md:col-span-2">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AIMA%20WHIT-m7VFlS1VuK9sFQyvUg8OT2SLKeKqA8.png"
               alt="AIMA Logo"

@@ -84,7 +84,7 @@ export default function ContactosPage() {
         <section className="py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Contact Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-14">
               {contactInfo.map((contact, index) => (
                 <Card key={index} className="border border-border hover:shadow-lg transition-all duration-300 group">
                   <CardHeader className="pb-3">
@@ -118,7 +118,7 @@ export default function ContactosPage() {
                 <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
                 <h2 className="text-2xl font-bold text-foreground">Centros de Atendimento</h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 {offices.map((office, index) => (
                   <Card key={index} className="border border-border hover:shadow-lg transition-all duration-300 group">
                     <CardHeader className="pb-2">
