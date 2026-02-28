@@ -19,14 +19,14 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-[#3A1060]/95 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-18">
+        <div className="flex justify-between items-center h-14 sm:h-16 md:h-[4.5rem]">
           <Link href="/" className="flex items-center">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AIMA%20WHIT-IsJtsie9npT4L17xRWtuIA3HZoF2y4.png"
               alt="AIMA Logo"
               width={160}
               height={48}
-              className="h-10 md:h-12 w-auto"
+              className="h-8 sm:h-10 md:h-12 w-auto"
             />
           </Link>
 
