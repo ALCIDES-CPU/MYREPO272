@@ -13,13 +13,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: "E-mail",
-    details: ["info@servicosaima.com", "Resposta em 48 horas uteis"],
+    details: ["info@aimapt.com", "Resposta em 48 horas uteis"],
     color: "#C74B8E",
   },
   {
     icon: Globe,
     title: "Website Oficial",
-    details: ["www.servicosaima.com", "Informacoes e servicos oficiais"],
+    details: ["www.aimapt.com", "Informacoes e servicos oficiais"],
     color: "#9B5BA5",
   },
   {
