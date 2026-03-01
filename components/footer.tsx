@@ -94,8 +94,8 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-sm mb-4 text-white/80 uppercase tracking-wider">Contacto</h3>
             <ul className="flex flex-col gap-2.5 text-sm text-white/50">
-              <li>info@servicosaima.com</li>
-              <li>+351 808 202 653</li>
+              <li>info@aimapt.com</li>
+              <li>+351 808 202 683</li>
             </ul>
           </div>
         </div>
