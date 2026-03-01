@@ -125,20 +125,22 @@ export function AppointmentForm() {
 
   const progressPercentage = (step / 4) * 100
 
-  const disableDates = (dateToCheck: Date) => {
-    // Datas disponiveis: 13 a 17 de abril de 2026
-    const startDate = new Date(2026, 3, 13) // 13 de abril de 2026
-    const endDate = new Date(2026, 3, 17) // 17 de abril de 2026
+const disableDates = (dateToCheck: Date) => {
+  // Datas disponíveis: 23 a 25 de março de 2026
+  // Nota: O mês 2 representa Março no JavaScript
+  const startDate = new Date(2026, 2, 23) 
+  const endDate = new Date(2026, 2, 25) 
 
-    // Bloquear fins de semana
-    const day = dateToCheck.getDay()
-    if (day === 0 || day === 6) return true
+  // Bloquear fins de semana (Sábado = 6, Domingo = 0)
+  const day = dateToCheck.getDay()
+  if (day === 0 || day === 6) return true
 
-    // Bloquear datas fora do intervalo permitido
-    const checkDate = new Date(dateToCheck)
-    checkDate.setHours(0, 0, 0, 0)
-    return checkDate < startDate || checkDate > endDate
-  }
+  // Bloquear datas fora do intervalo permitido
+  const checkDate = new Date(dateToCheck)
+  checkDate.setHours(0, 0, 0, 0)
+  
+  return checkDate < startDate || checkDate > endDate
+}
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
