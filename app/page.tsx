@@ -21,12 +21,26 @@ export default function HomePage() {
       <Navigation />
 
       <main className="flex-1">
-        {/* ================= HERO ================= */}
-        <section className="relative bg-[#4A1D6A] overflow-hidden">
-          <div className="relative max-w-7xl mx-auto min-h-[520px] lg:min-h-[620px] flex items-center">
 
-            {/* LEFT CONTENT */}
-            <div className="relative z-10 w-full lg:w-1/2 px-6 sm:px-10 lg:px-16 py-16 lg:py-24">
+        {/* ================= HERO FULL WIDTH ================= */}
+        <section className="relative h-[600px] lg:h-[700px] overflow-hidden">
+
+          {/* IMAGEM FULL WIDTH */}
+          <Image
+            src="/images/banner.jpeg"
+            alt="Banner AIMA"
+            fill
+            priority
+            className="object-cover object-right"
+          />
+
+          {/* OVERLAY GRADIENT */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/85 to-transparent" />
+
+          {/* CONTEÚDO */}
+          <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6 sm:px-10 lg:px-16">
+            <div className="max-w-xl">
+
               <div className="flex items-center gap-3 mb-8">
                 <span className="inline-block h-[3px] w-10 bg-[#C74B8E] rounded-full" />
                 <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/50">
@@ -34,11 +48,11 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold mb-6 text-white leading-[1.1] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold mb-6 text-white leading-[1.1] tracking-tight">
                 Agende o seu atendimento na AIMA
               </h1>
 
-              <p className="text-base md:text-lg text-white/65 mb-10 leading-relaxed max-w-lg">
+              <p className="text-lg text-white/70 mb-10 leading-relaxed">
                 Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe tudo online.
               </p>
 
@@ -46,7 +60,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="text-sm font-semibold bg-[#C74B8E] text-white hover:bg-[#B03A7D] shadow-lg shadow-[#C74B8E]/20 rounded-full px-8 h-12"
+                  className="bg-[#C74B8E] hover:bg-[#B03A7D] text-white rounded-full px-8 h-12"
                 >
                   <Link href="/agendar" className="flex items-center gap-2">
                     Agendar Agora
@@ -58,33 +72,21 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="text-sm bg-transparent border border-white/20 text-white hover:bg-white/10 hover:border-white/40 rounded-full px-8 h-12"
+                  className="border border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-12"
                 >
                   <Link href="/servicos">Ver Servicos</Link>
                 </Button>
               </div>
-            </div>
 
-            {/* RIGHT IMAGE */}
-            <div className="absolute inset-y-0 right-0 w-full lg:w-1/2">
-              <Image
-                src="/images/banner.jpeg"
-                alt="Banner AIMA - Agencia para a Integracao, Migracoes e Asilo"
-                fill
-                priority
-                className="object-cover object-right"
-              />
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/60 to-transparent" />
             </div>
           </div>
         </section>
 
-        {/* ================= TRUST INDICATORS ================= */}
-        <section className="bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 -mt-10 relative z-10 gap-3 sm:gap-0">
+        {/* ================= TRUST ================= */}
+        <section className="bg-background -mt-16 relative z-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-3 gap-4">
+
               {[
                 { icon: Shield, label: "Seguro", desc: "Dados encriptados", color: "#4A1D6A" },
                 { icon: Clock, label: "Rapido", desc: "Sem filas de espera", color: "#C74B8E" },
@@ -92,56 +94,52 @@ export default function HomePage() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`bg-card shadow-xl p-6 flex items-center gap-4 border border-border ${i === 0 ? "rounded-2xl sm:rounded-r-none" : ""
-                    } ${i === 2 ? "rounded-2xl sm:rounded-l-none" : ""}`}
+                  className="bg-card shadow-xl p-6 flex items-center gap-4 border border-border rounded-2xl"
                 >
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ backgroundColor: `${item.color}15` }}
                   >
                     <item.icon className="w-5 h-5" style={{ color: item.color }} />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">{item.label}</p>
-                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
                   </div>
                 </div>
               ))}
+
             </div>
           </div>
         </section>
 
-        {/* ================= HOW IT WORKS ================= */}
+        {/* ================= COMO FUNCIONA ================= */}
         <section className="py-24 bg-background">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-xl mb-16">
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-3">
-                Processo Simples
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Como funciona
-              </h2>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-4">Como funciona</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
+
               {[
                 {
                   step: "01",
                   icon: Calendar,
                   title: "Agende",
-                  description: "Escolha o servico, data, hora e local do seu atendimento.",
+                  description: "Escolha o servico, data, hora e local.",
                 },
                 {
                   step: "02",
                   icon: FileText,
                   title: "Submeta Documentos",
-                  description: "Faca upload dos documentos necessarios de forma segura.",
+                  description: "Faca upload dos documentos necessarios.",
                 },
                 {
                   step: "03",
                   icon: CreditCard,
                   title: "Confirme",
-                  description: "Efetue o pagamento e receba a confirmacao por e-mail.",
+                  description: "Efetue o pagamento e receba confirmacao.",
                 },
               ].map((item) => (
                 <div key={item.step} className="bg-card p-8 rounded-2xl border border-border">
@@ -150,24 +148,22 @@ export default function HomePage() {
                   </span>
                   <item.icon className="w-6 h-6 text-[#4A1D6A] mb-4" />
                   <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <p className="text-muted-foreground">{item.description}</p>
                 </div>
               ))}
+
             </div>
           </div>
         </section>
 
         {/* ================= CTA ================= */}
         <section className="py-24 bg-background">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground block mb-4">
-              Comece Agora
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto text-center px-6">
+            <h2 className="text-3xl font-bold mb-6">
               Pronto para agendar o seu atendimento?
             </h2>
             <p className="text-muted-foreground mb-10">
-              Processo simples, rapido e seguro. Em poucos minutos garanta o seu lugar.
+              Processo simples, rapido e seguro.
             </p>
             <Button
               asChild
@@ -181,6 +177,7 @@ export default function HomePage() {
             </Button>
           </div>
         </section>
+
       </main>
 
       <Footer />
