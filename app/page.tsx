@@ -48,8 +48,17 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold mb-6 text-white leading-[1.1] tracking-tight">
-                Agende o seu atendimento na AIMA
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-6">
+                <span className="block">
+                  Agende o seu
+                </span>
+                <span className="block">
+                  atendimento na{" "}
+                  <span className="relative inline-block text-[#C74B8E]">
+                    AIMA
+                    <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#C74B8E] rounded-full opacity-60"></span>
+                  </span>
+                </span>
               </h1>
 
               <p className="text-lg text-white/70 mb-10 leading-relaxed">
@@ -71,10 +80,12 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  variant="outline"
-                  className="border border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-12"
+                  className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white hover:text-[#4A1D6A] transition-all duration-300 rounded-full px-8 h-12 shadow-lg"
                 >
-                  <Link href="/servicos">Ver Servicos</Link>
+                  <Link href="/servicos" className="flex items-center gap-2">
+                    Ver Serviços
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </Button>
               </div>
 
