@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "AIMA - Agendamento de Servicos",
   description:
-    "Plataforma de agendamento para servicos da Agencia para a Integracao, Migracoes e Asilo. Agende o seu atendimento de forma rapida e segura.",
-  generator: "v0.app",
+    "Plataforma oficial de agendamentos AIMA.",
+  generator: "mrx",
   icons: {
     icon: "/logo-aima.png",
     shortcut: "/logo-aima.png",
