@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Globe,
     title: "Website Oficial",
-    details: ["www.servicosaima.com", "Informacoes e servicos oficiais"],
+    details: ["www.aimagov.com", "Informacoes e servicos oficiais"],
     color: "#9B5BA5",
   },
   {
