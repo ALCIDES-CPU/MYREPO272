@@ -53,7 +53,7 @@ export default function HomePage() {
                   src="/images/banner.jpeg"
                   alt="Banner AIMA - Agencia para a Integracao, Migracoes e Asilo"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-right"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/40 to-transparent hidden lg:block" />
@@ -74,11 +74,9 @@ export default function HomePage() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`bg-card shadow-xl p-5 sm:p-6 md:p-7 flex items-center gap-4 border border-border ${
-                    i === 0 ? "rounded-2xl sm:rounded-r-none sm:rounded-l-2xl" : ""
-                  } ${i === 2 ? "rounded-2xl sm:rounded-l-none sm:rounded-r-2xl" : ""} ${
-                    i === 1 ? "rounded-2xl sm:rounded-none sm:border-x-0" : ""
-                  }`}
+                  className={`bg-card shadow-xl p-5 sm:p-6 md:p-7 flex items-center gap-4 border border-border ${i === 0 ? "rounded-2xl sm:rounded-r-none sm:rounded-l-2xl" : ""
+                    } ${i === 2 ? "rounded-2xl sm:rounded-l-none sm:rounded-r-2xl" : ""} ${i === 1 ? "rounded-2xl sm:rounded-none sm:border-x-0" : ""
+                    }`}
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
