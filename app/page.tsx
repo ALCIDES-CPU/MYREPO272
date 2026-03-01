@@ -44,7 +44,7 @@ export default function HomePage() {
               <div className="flex items-center gap-3 mb-8">
                 <span className="inline-block h-[3px] w-10 bg-[#C74B8E] rounded-full" />
                 <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/50">
-                  Plataforma Oficial
+                  Plataforma Oficial da AIMA
                 </span>
               </div>
 
