@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AIMA - Agendamento de Serviços",
+    title: "AIMA - Agendamento para atendimento",
     description: "Plataforma oficial para agendamentos e serviços da Agência para a Integração, Migrações e Asilo.",
     url: "https://www.aimapt.com/",
     siteName: "AIMA",
