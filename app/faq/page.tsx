@@ -9,12 +9,7 @@ const faqs = [
   {
     question: "Como posso agendar um atendimento na AIMA?",
     answer:
-      'Pode agendar o seu atendimento atraves desta plataforma online. Clique em "Agendar Atendimento" no menu, preencha o formulario com os seus dados, faca upload dos documentos necessarios e proceda ao pagamento. Recebera uma confirmacao por e-mail.',
-  },
-  {
-    question: "Qual e o custo do agendamento?",
-    answer:
-      "O valor do agendamento e de 83,10 EUR, que inclui a taxa de processamento e servico. O pagamento e efetuado de forma segura atraves da plataforma Stripe.",
+      'Pode agendar o seu atendimento atraves desta plataforma online. Clique em "Agendar Atendimento" no menu, preencha o formulario com os seus dados, faça upload dos documentos necessarios e proceda ao pagamento. Recebera uma confirmacao por e-mail.',
   },
   {
     question: "Que documentos preciso de apresentar?",
