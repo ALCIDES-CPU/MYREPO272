@@ -156,9 +156,7 @@ export default function ContactosPage() {
                   <div>
                     <h3 className="font-semibold mb-1 text-foreground">Informacao Importante</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Para atendimento presencial, e obrigatorio agendamento previo atraves desta plataforma. Pedidos de
-                      informacao podem ser feitos por telefone ou e-mail. Para questoes urgentes, utilize a linha de
-                      apoio.
+                      Para atendimento presencial, e obrigatorio agendamento previo atraves desta plataforma.
                     </p>
                   </div>
                 </div>
