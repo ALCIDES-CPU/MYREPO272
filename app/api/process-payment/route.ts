@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 
 const STRIPE_CHECKOUT_URL = "https://whop.com/checkout/plan_3ntkA2Ygk2z4W"
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
