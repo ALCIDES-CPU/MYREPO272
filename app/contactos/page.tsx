@@ -6,54 +6,54 @@ import { Mail, Phone, MapPin, Clock, Globe, Info } from "lucide-react"
 const contactInfo = [
   {
     icon: Phone,
-    title: "Linha de Apoio",
-    details: ["+351 808 202 763", "Chamada para rede fixa nacional"],
+    title: "Centro de Contacto",
+    details: ["+351 217 115 000", "Disponível das 08:00 às 20:00"],
     color: "#4A1D6A",
   },
   {
     icon: Mail,
-    title: "E-mail",
-    details: ["info@aimapt.com", "Resposta em 48 horas uteis"],
+    title: "E-mail Geral",
+    details: ["geral@aima.gov.pt", "Para questões e informações gerais"],
     color: "#C74B8E",
   },
   {
     icon: Globe,
-    title: "Website Oficial",
-    details: ["www.aimapt.com", "Informacoes e servicos oficiais"],
+    title: "Portal AIMA",
+    details: ["www.aima.gov.pt", "Agendamentos e serviços online"],
     color: "#9B5BA5",
   },
   {
     icon: Clock,
-    title: "Horario de Atendimento",
-    details: ["Segunda a Sexta: 09:00 - 17:00", "Sabados, Domingos e Feriados: Encerrado"],
+    title: "Horário Geral",
+    details: ["Dias úteis: 09:00 - 16:30", "Agendamento prévio obrigatório"],
     color: "#4A1D6A",
   },
 ]
 
 const offices = [
   {
-    city: "Lisboa",
-    address: "Avenida Antonio Augusto de Aguiar, 20",
-    postalCode: "1069-119 Lisboa",
-    phone: "+351 21 810 6500",
+    city: "Lisboa (Sede)",
+    address: "Avenida Casal Ribeiro, 18",
+    postalCode: "1000-092 Lisboa",
+    phone: "+351 217 115 000",
   },
   {
     city: "Porto",
-    address: "Praca Mouzinho de Albuquerque, 113",
-    postalCode: "4100-359 Porto",
-    phone: "+351 22 339 5500",
+    address: "Avenida de França, 316",
+    postalCode: "4050-279 Porto",
+    phone: "+351 217 115 000",
   },
   {
     city: "Coimbra",
-    address: "Rua Antero de Quental, 119",
-    postalCode: "3000-032 Coimbra",
-    phone: "+351 239 497 100",
+    address: "Rua do Brasil, 436",
+    postalCode: "3030-175 Coimbra",
+    phone: "+351 217 115 000",
   },
   {
     city: "Faro",
-    address: "Rua Dr. Jose de Matos, 14",
-    postalCode: "8000-503 Faro",
-    phone: "+351 289 899 100",
+    address: "Loja do Cidadão - Mercado Municipal, Largo Dr. Francisco Sá Carneiro",
+    postalCode: "8000-151 Faro",
+    phone: "+351 217 115 000",
   },
 ]
 
