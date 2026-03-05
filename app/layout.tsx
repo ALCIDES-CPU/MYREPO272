@@ -1,42 +1,59 @@
+import "./globals.css"
+import type { Metadata } from "next"
+
 export const metadata: Metadata = {
   title: {
     default: "AIMA - Agendamento de Serviços e Apoio ao Imigrante",
     template: "%s | AIMA"
   },
-  description: "Portal oficial da Agência para a Integração, Migrações e Asilo (AIMA). Realize agendamentos, consulte processos e obtenha informações sobre residência em Portugal.",
-  keywords: ["AIMA", "Agendamento AIMA", "Residência Portugal", "Imigração", "Vistos Portugal", "Integração Migrantes"],
+  description:
+    "Portal oficial da Agência para a Integração, Migrações e Asilo (AIMA). Realize agendamentos, consulte processos e obtenha informações sobre residência em Portugal.",
+  keywords: [
+    "AIMA",
+    "Agendamento AIMA",
+    "Residência Portugal",
+    "Imigração",
+    "Vistos Portugal",
+    "Integração Migrantes"
+  ],
   authors: [{ name: "AIMA" }],
   creator: "AIMA",
   publisher: "AIMA",
+
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
+    telephone: false
   },
-  metadataBase: new URL("https://www.aimapt.com/"), 
+
+  metadataBase: new URL("https://www.aimapt.com/"),
+
   alternates: {
     canonical: "/",
     languages: {
       "pt-PT": "/pt",
-      "en-US": "/en",
-    },
+      "en-US": "/en"
+    }
   },
+
   openGraph: {
     title: "AIMA - Agendamento para atendimento",
-    description: "Plataforma oficial para agendamentos e serviços da Agência para a Integração, Migrações e Asilo.",
+    description:
+      "Plataforma oficial para agendamentos e serviços da Agência para a Integração, Migrações e Asilo.",
     url: "https://www.aimapt.com/",
     siteName: "AIMA",
     images: [
       {
-        url: "/og-image.png", 
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "AIMA Portal de Serviços",
-      },
+        alt: "AIMA Portal de Serviços"
+      }
     ],
     locale: "pt_PT",
-    type: "website",
+    type: "website"
   },
+
   robots: {
     index: true,
     follow: true,
@@ -45,7 +62,19 @@ export const metadata: Metadata = {
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+      "max-snippet": -1
+    }
+  }
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="pt">
+      <body>{children}</body>
+    </html>
+  )
 }
