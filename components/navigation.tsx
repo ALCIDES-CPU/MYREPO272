@@ -54,7 +54,8 @@ export function Navigation() {
               alt="AIMA Logo"
               width={160}
               height={48}
-              className="h-8 sm:h-10 md:h-12 w-auto"
+              className="h-8 sm:h-10 md:h-12"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </Link>
 
