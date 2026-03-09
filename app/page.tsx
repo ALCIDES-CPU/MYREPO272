@@ -99,8 +99,8 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Agende o seu atendimento{" "}
-                <span className="text-[#C74B8E]">na AIMA</span>
+                Agende o seu atendimento na{" "}
+                <span className="text-[#420068]">AIMA</span>
               </h1>
 
               <p className="text-lg lg:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
