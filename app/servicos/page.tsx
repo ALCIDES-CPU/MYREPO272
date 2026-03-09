@@ -128,13 +128,13 @@ export default function ServicosPage() {
 
             {/* CTA Section */}
             <div className="mt-20 lg:mt-28">
-              <div className="bg-foreground text-background rounded-2xl p-10 lg:p-16">
+              <div className="bg-[#274569] text-[#FCFEFD] rounded-2xl p-10 lg:p-16">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <h3 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">
                       Pronto para agendar?
                     </h3>
-                    <p className="text-background/60 leading-relaxed">
+                    <p className="text-[#B0C7E9] leading-relaxed">
                       Escolha o servico que necessita e complete o agendamento online de forma rapida e segura.
                     </p>
                   </div>
@@ -142,7 +142,7 @@ export default function ServicosPage() {
                     <Button
                       asChild
                       size="lg"
-                      className="bg-background text-foreground hover:bg-background/90 rounded-full px-8 h-12 text-sm font-medium"
+                      className="bg-[#FCFEFD] text-[#274569] hover:bg-[#B0C7E9] rounded-full px-8 h-12 text-sm font-medium"
                     >
                       <Link href="/agendar" className="flex items-center gap-2">
                         Agendar Atendimento

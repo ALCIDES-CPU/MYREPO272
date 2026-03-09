@@ -138,8 +138,8 @@ export default function ContactosPage() {
             {/* Important Notice */}
             <div className="mt-16 bg-muted/50 border border-border rounded-2xl p-8">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-foreground" />
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">

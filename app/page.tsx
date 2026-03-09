@@ -92,7 +92,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8 h-14 text-base font-medium"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-14 text-base font-medium"
                 >
                   <Link href="/agendar" className="flex items-center gap-3">
                     Agendar Agora
@@ -104,7 +104,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-foreground/20 text-foreground hover:bg-foreground/5 rounded-full px-8 h-14 text-base font-medium"
+                  className="border-primary/30 text-foreground hover:bg-primary/5 rounded-full px-8 h-14 text-base font-medium"
                 >
                   <Link href="/servicos">
                     Ver Servicos
@@ -139,7 +139,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full px-6 h-11 text-sm font-medium transition-all"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-6 h-11 text-sm font-medium transition-all"
                 >
                   <Link href="/servicos" className="flex items-center gap-2">
                     Ver Todos os Servicos
@@ -204,27 +204,27 @@ export default function HomePage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-24 lg:py-32 bg-foreground text-background">
+        <section className="py-24 lg:py-32 bg-[#274569] text-[#FCFEFD]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
                   A sua confianca e a nossa prioridade
                 </h2>
-                <p className="text-background/70 leading-relaxed mb-8">
+                <p className="text-[#B0C7E9] leading-relaxed mb-8">
                   Milhares de cidadaos ja utilizaram a nossa plataforma para agendar atendimentos de forma rapida e segura.
                 </p>
                 <div className="flex flex-wrap gap-6">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-background/70" />
+                    <CheckCircle className="w-5 h-5 text-[#B0C7E9]" />
                     <span className="text-sm">Dados encriptados</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-background/70" />
+                    <CheckCircle className="w-5 h-5 text-[#B0C7E9]" />
                     <span className="text-sm">Disponivel 24/7</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-background/70" />
+                    <CheckCircle className="w-5 h-5 text-[#B0C7E9]" />
                     <span className="text-sm">Suporte dedicado</span>
                   </div>
                 </div>
@@ -233,19 +233,19 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <p className="text-5xl lg:text-6xl font-bold mb-2">50k+</p>
-                  <p className="text-background/60 text-sm">Agendamentos realizados</p>
+                  <p className="text-[#8297AC] text-sm">Agendamentos realizados</p>
                 </div>
                 <div>
                   <p className="text-5xl lg:text-6xl font-bold mb-2">98%</p>
-                  <p className="text-background/60 text-sm">Satisfacao dos utilizadores</p>
+                  <p className="text-[#8297AC] text-sm">Satisfacao dos utilizadores</p>
                 </div>
                 <div>
                   <p className="text-5xl lg:text-6xl font-bold mb-2">24h</p>
-                  <p className="text-background/60 text-sm">Disponibilidade</p>
+                  <p className="text-[#8297AC] text-sm">Disponibilidade</p>
                 </div>
                 <div>
                   <p className="text-5xl lg:text-6xl font-bold mb-2">5min</p>
-                  <p className="text-background/60 text-sm">Tempo medio de agendamento</p>
+                  <p className="text-[#8297AC] text-sm">Tempo medio de agendamento</p>
                 </div>
               </div>
             </div>
@@ -264,7 +264,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-10 h-14 text-base font-medium"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 h-14 text-base font-medium"
             >
               <Link href="/agendar" className="flex items-center gap-3">
                 Comecar Agora

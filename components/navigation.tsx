@@ -55,7 +55,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center">
             <Button 
               asChild 
-              className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 h-10 text-sm font-medium"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 h-10 text-sm font-medium"
             >
               <Link href="/agendar" className="flex items-center gap-2">
                 Agendar
@@ -92,7 +92,7 @@ export function Navigation() {
               <div className="pt-4">
                 <Button 
                   asChild 
-                  className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full h-11 text-sm font-medium"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-11 text-sm font-medium"
                 >
                   <Link href="/agendar" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2">
                     Agendar Atendimento
