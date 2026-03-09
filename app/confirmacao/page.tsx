@@ -21,7 +21,7 @@ export default function ConfirmacaoPage() {
               </span>
               <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white text-balance">Agendamento Processado</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white text-balance">Agendamento Em Processo</h1>
           </div>
         </section>
 
