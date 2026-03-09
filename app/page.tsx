@@ -94,15 +94,15 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
                 <span className="w-2 h-2 bg-[#C74B8E] rounded-full animate-pulse" />
                 <span className="text-sm font-medium text-white/90">
-                  Plataforma Oficial de Agendamento
+                  Plataforma Oficial de Agendamento na AIMA
                 </span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Agende o seu atendimento de forma{" "}
-                <span className="text-[#C74B8E]">simples e rapida</span>
+                Agende o seu atendimento{" "}
+                <span className="text-[#C74B8E]">na AIMA</span>
               </h1>
-              
+
               <p className="text-lg lg:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
                 Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe o seu processo online, sem filas de espera.
               </p>
@@ -271,7 +271,7 @@ export default function HomePage() {
               {/* Decorative circles */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
-              
+
               <div className="relative z-10">
                 <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
                   Pronto para agendar?
