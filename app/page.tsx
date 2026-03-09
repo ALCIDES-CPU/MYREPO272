@@ -101,7 +101,7 @@ export default function HomePage() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
                 Agende o seu atendimento na{" "}
                 <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-[#3F1F6F] via-[#C83564] to-[#3F1F6F] bg-clip-text text-transparent font-extrabold">AIMA</span>
+                  <span className="bg-gradient-to-r from-[#C83564] via-[#3F1F6F] to-[#C83564] bg-clip-text text-transparent font-extrabold">AIMA</span>
                   <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#C74B8E] to-[#E87AB0] rounded-full"></span>
                 </span>
               </h1>
