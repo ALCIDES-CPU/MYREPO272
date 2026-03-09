@@ -7,13 +7,51 @@ import {
   Calendar,
   FileText,
   CreditCard,
+  ArrowUpRight,
+  Plus,
   CheckCircle,
-  Clock,
-  Shield,
-  ArrowRight,
-  Users,
-  MapPin,
 } from "lucide-react"
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Escolha o Servico",
+    description: "Selecione o tipo de atendimento que necessita e escolha a data e hora convenientes.",
+  },
+  {
+    number: "2",
+    title: "Submeta Documentos",
+    description: "Faca upload dos documentos necessarios de forma segura atraves da nossa plataforma.",
+  },
+  {
+    number: "3",
+    title: "Confirmacao",
+    description: "Efetue o pagamento das taxas e receba a confirmacao do seu agendamento.",
+  },
+]
+
+const services = [
+  {
+    title: "Agendamento Geral",
+    description: "Marcacao de atendimento para servicos gerais da AIMA.",
+  },
+  {
+    title: "Renovacao de AR",
+    description: "Renovacao de autorizacao de residencia temporaria ou permanente.",
+  },
+  {
+    title: "Primeira AR",
+    description: "Pedido de primeira autorizacao de residencia em Portugal.",
+  },
+  {
+    title: "Reagrupamento Familiar",
+    description: "Pedido de reagrupamento familiar para residentes.",
+  },
+  {
+    title: "CPLP",
+    description: "Emissao de documentos para cidadaos da CPLP.",
+  },
+]
 
 export default function HomePage() {
   return (
@@ -21,174 +59,220 @@ export default function HomePage() {
       <Navigation />
 
       <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center pt-20">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/banner.jpeg"
+              alt="AIMA Services"
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+          </div>
 
-        {/* ================= HERO FULL WIDTH ================= */}
-        <section className="relative h-[600px] lg:h-[700px] overflow-hidden">
-
-          {/* IMAGEM FULL WIDTH */}
-          <Image
-            src="/images/banner.jpeg"
-            alt="Banner AIMA"
-            fill
-            priority
-            className="object-cover object-right"
-          />
-
-          {/* OVERLAY GRADIENT */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/85 to-transparent" />
-
-          {/* CONTEÚDO */}
-          <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6 sm:px-10 lg:px-16">
-            <div className="max-w-xl">
-
-              <div className="flex items-center gap-3 mb-8">
-                <span className="inline-block h-[3px] w-10 bg-[#C74B8E] rounded-full" />
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/50">
-                  Plataforma Oficial
-                </span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight text-white mb-6">
-                <span className="block">
-                  Agende o seu
-                </span>
-                <span className="block">
-                  atendimento na{" "}
-                  <span className="relative inline-block text-[#C74B8E]">
-                    AIMA
-                    <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#C74B8E] rounded-full opacity-60"></span>
-                  </span>
-                </span>
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-6">
+                Plataforma Oficial AIMA
+              </p>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
+                Agende o seu atendimento de forma simples
               </h1>
-
-              <p className="text-lg text-white/70 mb-10 leading-relaxed">
-                Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe tudo online.
+              
+              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+                Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe o seu processo online, sem filas de espera.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-[#C74B8E] hover:bg-[#B03A7D] text-white rounded-full px-8 h-12"
+                  className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8 h-14 text-base font-medium"
                 >
-                  <Link href="/agendar" className="flex items-center gap-2">
+                  <Link href="/agendar" className="flex items-center gap-3">
                     Agendar Agora
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-5 h-5" />
                   </Link>
                 </Button>
 
                 <Button
                   asChild
                   size="lg"
-                  className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white hover:text-[#4A1D6A] transition-all duration-300 rounded-full px-8 h-12 shadow-lg"
+                  variant="outline"
+                  className="border-foreground/20 text-foreground hover:bg-foreground/5 rounded-full px-8 h-14 text-base font-medium"
+                >
+                  <Link href="/servicos">
+                    Ver Servicos
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
+            <span className="text-xs uppercase tracking-widest">Scroll</span>
+            <div className="w-px h-8 bg-border" />
+          </div>
+        </section>
+
+        {/* Services Accordion Section */}
+        <section className="py-24 lg:py-32 bg-background">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+              {/* Left Column */}
+              <div>
+                <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
+                  Nossos Servicos
+                </p>
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-6">
+                  Facilitamos o seu processo de legalizacao em Portugal.
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-8">
+                  A AIMA disponibiliza diversos servicos para apoiar imigrantes no processo de legalizacao e integracao em Portugal. Escolha o servico que melhor se adequa a sua situacao.
+                </p>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full px-6 h-11 text-sm font-medium transition-all"
                 >
                   <Link href="/servicos" className="flex items-center gap-2">
-                    Ver Serviços
-                    <ArrowRight className="w-4 h-4" />
+                    Ver Todos os Servicos
+                    <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </Button>
               </div>
 
-            </div>
-          </div>
-        </section>
-
-        {/* ================= TRUST ================= */}
-        <section className="bg-background -mt-16 relative z-20">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-4">
-
-              {[
-                { icon: Shield, label: "Seguro", desc: "Dados encriptados", color: "#4A1D6A" },
-                { icon: Clock, label: "Rapido", desc: "Sem filas de espera", color: "#C74B8E" },
-                { icon: CheckCircle, label: "Online", desc: "Disponivel 24/7", color: "#9B5BA5" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-card shadow-xl p-6 flex items-center gap-4 border border-border rounded-2xl"
-                >
+              {/* Right Column - Services List */}
+              <div className="flex flex-col">
+                {services.map((service, index) => (
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ backgroundColor: `${item.color}15` }}
+                    key={index}
+                    className="group flex items-start justify-between py-6 border-b border-border cursor-pointer hover:border-foreground/30 transition-colors"
                   >
-                    <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                    <div className="flex-1 pr-4">
+                      <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/80 transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {service.description}
+                      </p>
+                    </div>
+                    <Plus className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0 mt-1" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-foreground">{item.label}</p>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ================= COMO FUNCIONA ================= */}
-        <section className="py-24 bg-background">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-16">
-              <h2 className="text-3xl font-bold mb-4">Como funciona</h2>
+        {/* Process Section */}
+        <section className="py-24 lg:py-32 bg-muted/50">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
+                Como Funciona
+              </p>
+              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
+                Processo simples em 3 passos
+              </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-
-              {[
-                {
-                  step: "01",
-                  icon: Calendar,
-                  title: "Agende",
-                  description: "Escolha o servico, data, hora e local.",
-                },
-                {
-                  step: "02",
-                  icon: FileText,
-                  title: "Submeta Documentos",
-                  description: "Faca upload dos documentos necessarios.",
-                },
-                {
-                  step: "03",
-                  icon: CreditCard,
-                  title: "Confirme",
-                  description: "Efetue o pagamento e receba confirmacao.",
-                },
-              ].map((item) => (
-                <div key={item.step} className="bg-card p-8 rounded-2xl border border-border">
-                  <span className="text-5xl font-black text-border block mb-6">
-                    {item.step}
-                  </span>
-                  <item.icon className="w-6 h-6 text-[#4A1D6A] mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+              {processSteps.map((step, index) => (
+                <div key={index} className="relative">
+                  <div className="bg-card border border-border rounded-2xl p-8 h-full">
+                    <span className="text-6xl lg:text-7xl font-bold text-border/60 block mb-6">
+                      {step.number}
+                    </span>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
               ))}
-
             </div>
           </div>
         </section>
 
-        {/* ================= CTA ================= */}
-        <section className="py-24 bg-background">
-          <div className="max-w-3xl mx-auto text-center px-6">
-            <h2 className="text-3xl font-bold mb-6">
-              Pronto para agendar o seu atendimento?
+        {/* Stats Section */}
+        <section className="py-24 lg:py-32 bg-foreground text-background">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
+                  A sua confianca e a nossa prioridade
+                </h2>
+                <p className="text-background/70 leading-relaxed mb-8">
+                  Milhares de cidadaos ja utilizaram a nossa plataforma para agendar atendimentos de forma rapida e segura.
+                </p>
+                <div className="flex flex-wrap gap-6">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-background/70" />
+                    <span className="text-sm">Dados encriptados</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-background/70" />
+                    <span className="text-sm">Disponivel 24/7</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-background/70" />
+                    <span className="text-sm">Suporte dedicado</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <p className="text-5xl lg:text-6xl font-bold mb-2">50k+</p>
+                  <p className="text-background/60 text-sm">Agendamentos realizados</p>
+                </div>
+                <div>
+                  <p className="text-5xl lg:text-6xl font-bold mb-2">98%</p>
+                  <p className="text-background/60 text-sm">Satisfacao dos utilizadores</p>
+                </div>
+                <div>
+                  <p className="text-5xl lg:text-6xl font-bold mb-2">24h</p>
+                  <p className="text-background/60 text-sm">Disponibilidade</p>
+                </div>
+                <div>
+                  <p className="text-5xl lg:text-6xl font-bold mb-2">5min</p>
+                  <p className="text-background/60 text-sm">Tempo medio de agendamento</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-24 lg:py-32 bg-background">
+          <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+              Pronto para agendar?
             </h2>
-            <p className="text-muted-foreground mb-10">
-              Processo simples, rapido e seguro.
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Inicie o seu processo de forma rapida e segura. Estamos aqui para ajuda-lo.
             </p>
             <Button
               asChild
               size="lg"
-              className="bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-10 h-12"
+              className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-10 h-14 text-base font-medium"
             >
-              <Link href="/agendar" className="flex items-center gap-2">
-                Agendar Atendimento
-                <ArrowRight className="w-4 h-4" />
+              <Link href="/agendar" className="flex items-center gap-3">
+                Comecar Agora
+                <ArrowUpRight className="w-5 h-5" />
               </Link>
             </Button>
           </div>
         </section>
-
       </main>
 
       <Footer />

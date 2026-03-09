@@ -2,54 +2,93 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
+
+const footerLinks = [
+  { href: "/servicos", label: "Servicos" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contactos", label: "Contactos" },
+  { href: "/agendar", label: "Agendar" },
+]
+
+const partners = [
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/R%20PT-UsUcqcgTWpGh4Iuh8XZV15jxd2SMVO.png",
+    alt: "Republica Portuguesa",
+    width: 160,
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CPT%202020-iUPMLKqARDRBGg9FoaJRBuVTEXAwP6.png",
+    alt: "COMPETE 2020",
+    width: 160,
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%20UE-o96TqErBlA6hJycCPqLKPRkRASwPca.png",
+    alt: "Uniao Europeia",
+    width: 180,
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PT%202020-oaiSRvVwOROeJBbLK7jKQAov01GkNU.png",
+    alt: "Portugal 2020",
+    width: 240,
+  },
+  {
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aima_horizontal_cor-rIl9RarT6CEu1ZKBjIgyK63jrgQiBj.png",
+    alt: "AIMA",
+    width: 180,
+  },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-[#2D0E47] text-white mt-auto">
+    <footer className="bg-foreground text-background mt-auto">
+      {/* Contact Section */}
+      <div className="border-b border-background/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-widest text-background/40 mb-4">
+                Contacto
+              </p>
+              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
+                Precisa de ajuda?
+              </h2>
+              <p className="text-background/60 leading-relaxed max-w-md">
+                Estamos disponiveis para esclarecer todas as suas duvidas sobre o processo de agendamento.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 lg:items-end">
+              <Link 
+                href="mailto:info@aimagovpt.com"
+                className="text-xl lg:text-2xl font-medium hover:text-background/80 transition-colors flex items-center gap-2"
+              >
+                info@aimagovpt.com
+                <ArrowUpRight className="w-5 h-5" />
+              </Link>
+              <p className="text-background/40 text-sm">+351 213 585 500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Partners Section */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <p className="text-xs font-medium text-center mb-4 sm:mb-6 text-white/50 uppercase tracking-widest">
+      <div className="border-b border-background/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+          <p className="text-xs font-medium uppercase tracking-widest text-background/40 mb-8 text-center">
             Apoios e Financiamento
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 items-center justify-items-center">
-            {[
-              {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/R%20PT-UsUcqcgTWpGh4Iuh8XZV15jxd2SMVO.png",
-                alt: "Republica Portuguesa",
-                width: 180,
-              },
-              {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CPT%202020-iUPMLKqARDRBGg9FoaJRBuVTEXAwP6.png",
-                alt: "COMPETE 2020",
-                width: 180,
-              },
-              {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%20UE-o96TqErBlA6hJycCPqLKPRkRASwPca.png",
-                alt: "Uniao Europeia - Fundo Social Europeu",
-                width: 200,
-              },
-              {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PT%202020-oaiSRvVwOROeJBbLK7jKQAov01GkNU.png",
-                alt: "Portugal 2020",
-                width: 280,
-              },
-              {
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aima_horizontal_cor-rIl9RarT6CEu1ZKBjIgyK63jrgQiBj.png",
-                alt: "AIMA",
-                width: 200,
-              },
-            ].map((partner, i) => (
+          <div className="flex flex-wrap justify-center items-center gap-4">
+            {partners.map((partner, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-lg p-2 sm:p-3 hover:shadow-md transition-shadow ${i === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                className="bg-background rounded-lg p-3 hover:shadow-md transition-shadow"
               >
                 <Image
                   src={partner.src}
                   alt={partner.alt}
                   width={partner.width}
-                  height={50}
-                  className="h-6 sm:h-8 w-auto"
+                  height={40}
+                  className="h-6 lg:h-8 w-auto"
                 />
               </div>
             ))}
@@ -57,54 +96,29 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="sm:col-span-2 md:col-span-2">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AIMA%20WHIT-m7VFlS1VuK9sFQyvUg8OT2SLKeKqA8.png"
-              alt="AIMA Logo"
-              width={160}
-              height={48}
-              className="h-10 w-auto mb-3"
-            />
-            <p className="text-white/50 leading-relaxed text-sm max-w-md">
-              Plataforma oficial da AIMA destinada a agilizacao do processo de legalizacao em Portugal.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-sm mb-4 text-white/80 uppercase tracking-wider">Links</h3>
-            <ul className="flex flex-col gap-2.5">
-              {[
-                { href: "/servicos", label: "Tipos de Servicos" },
-                { href: "/faq", label: "Perguntas Frequentes" },
-                { href: "/contactos", label: "Contactos" },
-                { href: "/agendar", label: "Agendar Atendimento" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-white/50 hover:text-white transition-colors text-sm">
-                    {link.label}
-                  </Link>
-                </li>
+      {/* Bottom Section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-8">
+            <Link href="/" className="text-xl font-bold tracking-tight">
+              AIMA
+            </Link>
+            <div className="hidden md:flex items-center gap-6">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-background/60 hover:text-background transition-colors"
+                >
+                  {link.label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
-
-          <div>
-            <h3 className="font-semibold text-sm mb-4 text-white/80 uppercase tracking-wider">Contacto</h3>
-            <ul className="flex flex-col gap-2.5 text-sm text-white/50">
-              <li>info@aimagovpt.com</li>
-              <li>+351 213 585 500</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} AIMA - Agencia para a Integracao, Migracoes e Asilo. Todos os direitos reservados.</p>
+          
+          <p className="text-xs text-background/40 text-center md:text-right">
+            &copy; {new Date().getFullYear()} AIMA - Agencia para a Integracao, Migracoes e Asilo.
+          </p>
         </div>
       </div>
     </footer>
