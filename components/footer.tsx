@@ -94,7 +94,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-sm mb-4 text-white/80 uppercase tracking-wider">Contacto</h3>
             <ul className="flex flex-col gap-2.5 text-sm text-white/50">
-              <li>geral@aima.gov.pt</li>
+              <li>info@aimagovpt.com</li>
               <li>+351 213 585 500</li>
             </ul>
           </div>
