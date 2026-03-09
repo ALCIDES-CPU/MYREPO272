@@ -111,7 +111,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-[#C74B8E] text-white hover:bg-[#C74B8E]/90 rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#C74B8E]/30"
+                  className="bg-[#400683] text-white hover:bg-[#C74B8E]/90 rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#C74B8E]/30"
                 >
                   <Link href="/agendar" className="flex items-center gap-3">
                     Agendar Agora
