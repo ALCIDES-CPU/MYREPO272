@@ -2,9 +2,11 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
+import { Menu, X, User, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { createClient } from "@/lib/supabase/client"
+import type { User as SupabaseUser } from "@supabase/supabase-js"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,6 +17,32 @@ const navLinks = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [user, setUser] = useState<SupabaseUser | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const supabase = createClient()
+    
+    // Get initial session
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user)
+      setIsLoading(false)
+    })
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  const handleLogout = async () => {
+    const supabase = createClient()
+    await supabase.auth.signOut()
+    setUser(null)
+    window.location.href = '/'
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-[#3A1060]/95 backdrop-blur-md border-b border-white/10">
@@ -41,9 +69,41 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild size="sm" className="ml-3 bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full px-6 font-semibold">
-              <Link href="/agendar">Agendar</Link>
-            </Button>
+            
+            {!isLoading && (
+              <>
+                {user ? (
+                  <div className="flex items-center gap-2 ml-3">
+                    <Button asChild size="sm" className="bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full px-6 font-semibold">
+                      <Link href="/agendar">Agendar</Link>
+                    </Button>
+                    <div className="flex items-center gap-2 ml-2 pl-2 border-l border-white/20">
+                      <span className="text-white/70 text-sm truncate max-w-[120px]">
+                        {user.email?.split('@')[0]}
+                      </span>
+                      <Button 
+                        size="sm" 
+                        variant="ghost" 
+                        className="text-white/70 hover:text-white hover:bg-white/10 rounded-full p-2"
+                        onClick={handleLogout}
+                        title="Terminar sessao"
+                      >
+                        <LogOut className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 ml-3">
+                    <Button asChild size="sm" variant="ghost" className="text-white/80 hover:text-white hover:bg-white/10 rounded-full px-4 font-medium">
+                      <Link href="/auth/login">Entrar</Link>
+                    </Button>
+                    <Button asChild size="sm" className="bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full px-6 font-semibold">
+                      <Link href="/agendar">Agendar</Link>
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -70,13 +130,49 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2 px-4">
-                <Button asChild size="sm" className="w-full bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full font-semibold">
-                  <Link href="/agendar" onClick={() => setIsOpen(false)}>
-                    Agendar Atendimento
-                  </Link>
-                </Button>
-              </div>
+              
+              {!isLoading && (
+                <div className="pt-2 px-4 space-y-2">
+                  {user ? (
+                    <>
+                      <div className="flex items-center gap-2 py-2 text-white/70 text-sm">
+                        <User className="h-4 w-4" />
+                        <span className="truncate">{user.email}</span>
+                      </div>
+                      <Button asChild size="sm" className="w-full bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full font-semibold">
+                        <Link href="/agendar" onClick={() => setIsOpen(false)}>
+                          Agendar Atendimento
+                        </Link>
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="w-full rounded-full font-medium text-white border-white/30 hover:bg-white/10"
+                        onClick={() => {
+                          handleLogout()
+                          setIsOpen(false)
+                        }}
+                      >
+                        <LogOut className="h-4 w-4 mr-2" />
+                        Terminar Sessao
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button asChild size="sm" className="w-full bg-[#C74B8E] text-white hover:bg-[#B03A7D] rounded-full font-semibold">
+                        <Link href="/agendar" onClick={() => setIsOpen(false)}>
+                          Agendar Atendimento
+                        </Link>
+                      </Button>
+                      <Button asChild size="sm" variant="outline" className="w-full rounded-full font-medium text-white border-white/30 hover:bg-white/10">
+                        <Link href="/auth/login" onClick={() => setIsOpen(false)}>
+                          Entrar
+                        </Link>
+                      </Button>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         )}

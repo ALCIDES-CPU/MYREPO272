@@ -13,13 +13,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: "E-mail Geral",
-    details: ["geral@aima.gov.pt", "Para questões e informações gerais"],
+    details: ["info@aimagovpt.com", "Para questoes e informacoes gerais"],
     color: "#C74B8E",
   },
   {
     icon: Globe,
     title: "Portal AIMA",
-    details: ["www.aima.gov.pt", "Agendamentos e serviços online"],
+    details: ["aimagovpt.com", "Agendamentos e servicos online"],
     color: "#9B5BA5",
   },
   {

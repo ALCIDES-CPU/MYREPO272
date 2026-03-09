@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     telephone: false
   },
 
-  metadataBase: new URL("https://www.aimapt.com/"),
+  metadataBase: new URL("https://aimagovpt.com"),
 
   alternates: {
     canonical: "/",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "AIMA - Agendamento para atendimento",
     description:
       "Plataforma oficial para agendamentos e serviços da Agência para a Integração, Migrações e Asilo.",
-    url: "https://www.aimapt.com/",
+    url: "https://aimagovpt.com",
     siteName: "AIMA",
     images: [
       {
