@@ -41,40 +41,40 @@ const partners = [
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background mt-auto">
+    <footer className="bg-[#274569] text-[#FCFEFD] mt-auto">
       {/* Contact Section */}
-      <div className="border-b border-background/10">
+      <div className="border-b border-[#8297AC]/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-widest text-background/40 mb-4">
+              <p className="text-xs font-medium uppercase tracking-widest text-[#8297AC] mb-4">
                 Contacto
               </p>
               <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
                 Precisa de ajuda?
               </h2>
-              <p className="text-background/60 leading-relaxed max-w-md">
+              <p className="text-[#B0C7E9] leading-relaxed max-w-md">
                 Estamos disponiveis para esclarecer todas as suas duvidas sobre o processo de agendamento.
               </p>
             </div>
             <div className="flex flex-col gap-4 lg:items-end">
               <Link 
                 href="mailto:info@aimagovpt.com"
-                className="text-xl lg:text-2xl font-medium hover:text-background/80 transition-colors flex items-center gap-2"
+                className="text-xl lg:text-2xl font-medium hover:text-[#B0C7E9] transition-colors flex items-center gap-2"
               >
                 info@aimagovpt.com
                 <ArrowUpRight className="w-5 h-5" />
               </Link>
-              <p className="text-background/40 text-sm">+351 213 585 500</p>
+              <p className="text-[#8297AC] text-sm">+351 213 585 500</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Partners Section */}
-      <div className="border-b border-background/10">
+      <div className="border-b border-[#8297AC]/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
-          <p className="text-xs font-medium uppercase tracking-widest text-background/40 mb-8 text-center">
+          <p className="text-xs font-medium uppercase tracking-widest text-[#8297AC] mb-8 text-center">
             Apoios e Financiamento
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4">
@@ -108,7 +108,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-background/60 hover:text-background transition-colors"
+                  className="text-sm text-[#B0C7E9] hover:text-[#FCFEFD] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -116,7 +116,7 @@ export function Footer() {
             </div>
           </div>
           
-          <p className="text-xs text-background/40 text-center md:text-right">
+          <p className="text-xs text-[#8297AC] text-center md:text-right">
             &copy; {new Date().getFullYear()} AIMA - Agencia para a Integracao, Migracoes e Asilo.
           </p>
         </div>

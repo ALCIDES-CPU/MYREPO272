@@ -103,17 +103,17 @@ export default function FAQPage() {
             </Accordion>
 
             {/* CTA Section */}
-            <div className="mt-16 bg-foreground text-background rounded-2xl p-10 lg:p-12 text-center">
+            <div className="mt-16 bg-[#274569] text-[#FCFEFD] rounded-2xl p-10 lg:p-12 text-center">
               <h3 className="text-2xl font-bold tracking-tight mb-4">
                 Nao encontrou a resposta?
               </h3>
-              <p className="text-background/70 mb-8 max-w-md mx-auto">
+              <p className="text-[#B0C7E9] mb-8 max-w-md mx-auto">
                 Entre em contacto connosco atraves dos nossos canais de apoio. Estamos disponiveis para ajudar.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   asChild
-                  className="bg-background text-foreground hover:bg-background/90 rounded-full px-8 h-11 text-sm font-medium"
+                  className="bg-[#FCFEFD] text-[#274569] hover:bg-[#B0C7E9] rounded-full px-8 h-11 text-sm font-medium"
                 >
                   <Link href="/contactos" className="flex items-center gap-2">
                     Ver Contactos
@@ -123,7 +123,7 @@ export default function FAQPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-background/30 text-background hover:bg-background/10 rounded-full px-8 h-11 text-sm font-medium"
+                  className="border-[#8297AC] text-[#FCFEFD] hover:bg-[#8297AC]/20 rounded-full px-8 h-11 text-sm font-medium"
                 >
                   <Link href="/agendar">
                     Fazer Agendamento
