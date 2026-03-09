@@ -1,15 +1,15 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
 
 const faqs = [
   {
     question: "Como posso agendar um atendimento na AIMA?",
     answer:
-      'Pode agendar o seu atendimento atraves desta plataforma online. Clique em "Agendar Atendimento" no menu, preencha o formulario com os seus dados, faça upload dos documentos necessarios e proceda ao pagamento. Recebera uma confirmacao por e-mail.',
+      'Pode agendar o seu atendimento atraves desta plataforma online. Clique em "Agendar Atendimento" no menu, preencha o formulario com os seus dados, faca upload dos documentos necessarios e proceda ao pagamento. Recebera uma confirmacao por e-mail.',
   },
   {
     question: "Que documentos preciso de apresentar?",
@@ -68,61 +68,69 @@ export default function FAQPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
 
-      <main className="flex-1">
+      <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="bg-[#4A1D6A] py-14 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex items-center justify-center gap-2 mb-5">
-              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-              <span className="text-sm font-medium tracking-wide uppercase text-white/60">
+        <section className="py-20 lg:py-28 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
                 Duvidas Frequentes
-              </span>
-              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
+              </p>
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+                Perguntas Frequentes
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Encontre respostas para as perguntas mais comuns sobre o processo de agendamento AIMA.
+              </p>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white text-balance">Perguntas Frequentes (FAQ)</h1>
-            <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Encontre respostas para as perguntas mais comuns sobre o processo de agendamento AIMA.
-            </p>
           </div>
         </section>
 
-        <section className="py-14 md:py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Card className="border border-border shadow-sm">
-              <CardContent className="pt-6">
-                <Accordion type="single" collapsible className="w-full">
-                  {faqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
-                      <AccordionTrigger className="text-left text-sm font-medium hover:no-underline">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground leading-relaxed text-sm">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
+        {/* FAQ Section */}
+        <section className="py-20 lg:py-28">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
+                  <AccordionTrigger className="text-left py-6 text-base font-medium hover:no-underline text-foreground">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
 
-            <Card className="mt-8 bg-muted/40 border border-border">
-              <CardContent className="pt-6">
-                <div className="text-center">
-                  <h3 className="text-xl font-semibold mb-2 text-foreground">Nao encontrou a resposta?</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                    Entre em contacto connosco atraves dos nossos canais de apoio. Estamos disponiveis para ajudar.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button asChild className="bg-[#4A1D6A] hover:bg-[#3A0D5A] text-white rounded-full px-8">
-                      <Link href="/contactos">Ver Contactos</Link>
-                    </Button>
-                    <Button asChild variant="outline" className="bg-transparent rounded-full px-8">
-                      <Link href="/agendar">Fazer Agendamento</Link>
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            {/* CTA Section */}
+            <div className="mt-16 bg-foreground text-background rounded-2xl p-10 lg:p-12 text-center">
+              <h3 className="text-2xl font-bold tracking-tight mb-4">
+                Nao encontrou a resposta?
+              </h3>
+              <p className="text-background/70 mb-8 max-w-md mx-auto">
+                Entre em contacto connosco atraves dos nossos canais de apoio. Estamos disponiveis para ajudar.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  asChild
+                  className="bg-background text-foreground hover:bg-background/90 rounded-full px-8 h-11 text-sm font-medium"
+                >
+                  <Link href="/contactos" className="flex items-center gap-2">
+                    Ver Contactos
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-background/30 text-background hover:bg-background/10 rounded-full px-8 h-11 text-sm font-medium"
+                >
+                  <Link href="/agendar">
+                    Fazer Agendamento
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>

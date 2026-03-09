@@ -1,32 +1,27 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Clock, Globe, Info } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Globe, ArrowUpRight } from "lucide-react"
 
 const contactInfo = [
   {
     icon: Phone,
     title: "Centro de Contacto",
-    details: ["+351 217 115 000", "Disponível das 08:00 às 20:00"],
-    color: "#4A1D6A",
+    details: ["+351 217 115 000", "Disponivel das 08:00 as 20:00"],
   },
   {
     icon: Mail,
     title: "E-mail Geral",
     details: ["info@aimagovpt.com", "Para questoes e informacoes gerais"],
-    color: "#C74B8E",
   },
   {
     icon: Globe,
     title: "Portal AIMA",
     details: ["aimagovpt.com", "Agendamentos e servicos online"],
-    color: "#9B5BA5",
   },
   {
     icon: Clock,
-    title: "Horário Geral",
-    details: ["Dias úteis: 09:00 - 16:30", "Agendamento prévio obrigatório"],
-    color: "#4A1D6A",
+    title: "Horario Geral",
+    details: ["Dias uteis: 09:00 - 16:30", "Agendamento previo obrigatorio"],
   },
 ]
 
@@ -39,7 +34,7 @@ const offices = [
   },
   {
     city: "Porto",
-    address: "Avenida de França, 316",
+    address: "Avenida de Franca, 316",
     postalCode: "4050-279 Porto",
     phone: "+351 217 115 000",
   },
@@ -51,7 +46,7 @@ const offices = [
   },
   {
     city: "Faro",
-    address: "Loja do Cidadão - Mercado Municipal, Largo Dr. Francisco Sá Carneiro",
+    address: "Loja do Cidadao - Mercado Municipal",
     postalCode: "8000-151 Faro",
     phone: "+351 217 115 000",
   },
@@ -62,106 +57,100 @@ export default function ContactosPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
 
-      <main className="flex-1">
+      <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="bg-[#4A1D6A] py-14 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex items-center justify-center gap-2 mb-5">
-              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-              <span className="text-sm font-medium tracking-wide uppercase text-white/60">
+        <section className="py-20 lg:py-28 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
                 Fale Connosco
-              </span>
-              <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
+              </p>
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+                Contactos
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Entre em contacto connosco atraves dos seguintes canais. Estamos disponiveis para ajudar com as suas questoes.
+              </p>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white text-balance">Contactos</h1>
-            <p className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Entre em contacto connosco atraves dos seguintes canais. Estamos disponiveis para ajudar com as suas
-              questoes.
-            </p>
           </div>
         </section>
 
-        <section className="py-14 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Contact Information */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-14">
+        {/* Contact Information */}
+        <section className="py-20 lg:py-28">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-20">
               {contactInfo.map((contact, index) => (
-                <Card key={index} className="border border-border hover:shadow-lg transition-all duration-300 group">
-                  <CardHeader className="pb-3">
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center mb-3 transition-transform group-hover:scale-110"
-                      style={{ backgroundColor: `${contact.color}12` }}
-                    >
-                      <contact.icon className="w-5 h-5" style={{ color: contact.color }} />
-                    </div>
-                    <CardTitle className="text-base">{contact.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-col gap-0.5">
-                      {contact.details.map((detail, detailIndex) => (
-                        <p
-                          key={detailIndex}
-                          className={detailIndex === 0 ? "font-semibold text-sm text-foreground" : "text-xs text-muted-foreground"}
-                        >
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div key={index} className="group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <contact.icon className="w-5 h-5 text-muted-foreground" />
+                    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
+                      {contact.title}
+                    </h3>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-lg font-medium text-foreground">
+                      {contact.details[0]}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {contact.details[1]}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
 
-            {/* Offices */}
+            {/* Offices Section */}
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <span className="h-1 w-8 bg-[#C74B8E] rounded-full" />
-                <h2 className="text-2xl font-bold text-foreground">Centros de Atendimento</h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-8">
+                Centros de Atendimento
+              </p>
+              
+              <div className="space-y-0">
                 {offices.map((office, index) => (
-                  <Card key={index} className="border border-border hover:shadow-lg transition-all duration-300 group">
-                    <CardHeader className="pb-2">
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 bg-[#4A1D6A]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <MapPin className="w-5 h-5 text-[#4A1D6A]" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-lg">{office.city}</CardTitle>
-                          <CardDescription className="mt-1 leading-relaxed text-sm">
-                            {office.address}
-                            <br />
-                            {office.postalCode}
-                          </CardDescription>
-                        </div>
+                  <div
+                    key={index}
+                    className="group border-b border-border py-8 first:border-t"
+                  >
+                    <div className="grid md:grid-cols-12 gap-4 md:gap-8 items-start">
+                      <div className="md:col-span-3">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          {office.city}
+                        </h3>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center gap-2 text-sm ml-[52px]">
-                        <Phone className="w-3.5 h-3.5 text-muted-foreground" />
-                        <span className="font-medium text-foreground">{office.phone}</span>
+                      <div className="md:col-span-5">
+                        <p className="text-muted-foreground">
+                          {office.address}
+                          <br />
+                          {office.postalCode}
+                        </p>
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div className="md:col-span-4 md:text-right">
+                        <p className="text-foreground font-medium">
+                          {office.phone}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
 
-            <Card className="mt-12 bg-muted/40 border border-border">
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#C74B8E]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Info className="w-5 h-5 text-[#C74B8E]" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1 text-foreground">Informacao Importante</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Para atendimento presencial, e obrigatorio agendamento previo atraves desta plataforma.
-                    </p>
-                  </div>
+            {/* Important Notice */}
+            <div className="mt-16 bg-muted/50 border border-border rounded-2xl p-8">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-foreground" />
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    Informacao Importante
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Para atendimento presencial, e obrigatorio agendamento previo atraves desta plataforma. Chegue com 15 minutos de antecedencia e traga todos os documentos originais.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
