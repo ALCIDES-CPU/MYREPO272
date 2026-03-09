@@ -7,24 +7,29 @@ import {
   Calendar,
   FileText,
   CreditCard,
-  ArrowUpRight,
-  Plus,
+  ArrowRight,
   CheckCircle,
+  Clock,
+  Shield,
+  Users,
 } from "lucide-react"
 
 const processSteps = [
   {
-    number: "1",
+    icon: Calendar,
+    number: "01",
     title: "Escolha o Servico",
     description: "Selecione o tipo de atendimento que necessita e escolha a data e hora convenientes.",
   },
   {
-    number: "2",
+    icon: FileText,
+    number: "02",
     title: "Submeta Documentos",
     description: "Faca upload dos documentos necessarios de forma segura atraves da nossa plataforma.",
   },
   {
-    number: "3",
+    icon: CreditCard,
+    number: "03",
     title: "Confirmacao",
     description: "Efetue o pagamento das taxas e receba a confirmacao do seu agendamento.",
   },
@@ -34,23 +39,30 @@ const services = [
   {
     title: "Agendamento Geral",
     description: "Marcacao de atendimento para servicos gerais da AIMA.",
+    icon: Calendar,
   },
   {
     title: "Renovacao de AR",
     description: "Renovacao de autorizacao de residencia temporaria ou permanente.",
+    icon: FileText,
   },
   {
     title: "Primeira AR",
     description: "Pedido de primeira autorizacao de residencia em Portugal.",
+    icon: Users,
   },
   {
     title: "Reagrupamento Familiar",
     description: "Pedido de reagrupamento familiar para residentes.",
+    icon: Users,
   },
-  {
-    title: "CPLP",
-    description: "Emissao de documentos para cidadaos da CPLP.",
-  },
+]
+
+const stats = [
+  { value: "50k+", label: "Agendamentos realizados" },
+  { value: "98%", label: "Satisfacao dos utilizadores" },
+  { value: "24/7", label: "Disponibilidade online" },
+  { value: "5min", label: "Tempo medio de agendamento" },
 ]
 
 export default function HomePage() {
@@ -60,8 +72,8 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center pt-20">
-          {/* Background Image */}
+        <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+          {/* Background with gradient overlay */}
           <div className="absolute inset-0">
             <Image
               src="/images/banner.jpeg"
@@ -70,21 +82,28 @@ export default function HomePage() {
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A]/95 via-[#4A1D6A]/80 to-[#4A1D6A]/60" />
+            {/* Decorative elements */}
+            <div className="absolute top-20 right-20 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#7B4B94]/20 rounded-full blur-3xl" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
             <div className="max-w-3xl">
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-6">
-                Plataforma Oficial AIMA
-              </p>
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+                <span className="w-2 h-2 bg-[#C74B8E] rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-white/90">
+                  Plataforma Oficial de Agendamento
+                </span>
+              </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
-                Agende o seu atendimento de forma simples
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+                Agende o seu atendimento de forma{" "}
+                <span className="text-[#C74B8E]">simples e rapida</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
+              <p className="text-lg lg:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
                 Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe o seu processo online, sem filas de espera.
               </p>
 
@@ -92,11 +111,11 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-14 text-base font-medium"
+                  className="bg-[#C74B8E] text-white hover:bg-[#C74B8E]/90 rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#C74B8E]/30"
                 >
                   <Link href="/agendar" className="flex items-center gap-3">
                     Agendar Agora
-                    <ArrowUpRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
 
@@ -104,173 +123,174 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-primary/30 text-foreground hover:bg-primary/5 rounded-full px-8 h-14 text-base font-medium"
+                  className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm"
                 >
                   <Link href="/servicos">
                     Ver Servicos
                   </Link>
                 </Button>
               </div>
-            </div>
-          </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-            <div className="w-px h-8 bg-border" />
-          </div>
-        </section>
-
-        {/* Services Accordion Section */}
-        <section className="py-24 lg:py-32 bg-background">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-              {/* Left Column */}
-              <div>
-                <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
-                  Nossos Servicos
-                </p>
-                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-6">
-                  Facilitamos o seu processo de legalizacao em Portugal.
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  A AIMA disponibiliza diversos servicos para apoiar imigrantes no processo de legalizacao e integracao em Portugal. Escolha o servico que melhor se adequa a sua situacao.
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-6 h-11 text-sm font-medium transition-all"
-                >
-                  <Link href="/servicos" className="flex items-center gap-2">
-                    Ver Todos os Servicos
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </div>
-
-              {/* Right Column - Services List */}
-              <div className="flex flex-col">
-                {services.map((service, index) => (
-                  <div
-                    key={index}
-                    className="group flex items-start justify-between py-6 border-b border-border cursor-pointer hover:border-foreground/30 transition-colors"
-                  >
-                    <div className="flex-1 pr-4">
-                      <h3 className="text-lg font-medium text-foreground group-hover:text-foreground/80 transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {service.description}
-                      </p>
-                    </div>
-                    <Plus className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0 mt-1" />
+              {/* Trust badges */}
+              <div className="mt-12 pt-8 border-t border-white/20">
+                <div className="flex flex-wrap gap-6">
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Shield className="w-5 h-5" />
+                    <span className="text-sm">Dados encriptados</span>
                   </div>
-                ))}
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Clock className="w-5 h-5" />
+                    <span className="text-sm">Disponivel 24/7</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <CheckCircle className="w-5 h-5" />
+                    <span className="text-sm">Suporte dedicado</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-24 lg:py-32 bg-muted/50">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
-                Como Funciona
-              </p>
-              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
-                Processo simples em 3 passos
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-              {processSteps.map((step, index) => (
-                <div key={index} className="relative">
-                  <div className="bg-card border border-border rounded-2xl p-8 h-full">
-                    <span className="text-6xl lg:text-7xl font-bold text-border/60 block mb-6">
-                      {step.number}
-                    </span>
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
+        {/* Stats Section */}
+        <section className="py-16 bg-muted/50 border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <p className="text-3xl lg:text-4xl font-bold text-foreground mb-1">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-24 lg:py-32 bg-[#274569] text-[#FCFEFD]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
-                  A sua confianca e a nossa prioridade
-                </h2>
-                <p className="text-[#B0C7E9] leading-relaxed mb-8">
-                  Milhares de cidadaos ja utilizaram a nossa plataforma para agendar atendimentos de forma rapida e segura.
-                </p>
-                <div className="flex flex-wrap gap-6">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#B0C7E9]" />
-                    <span className="text-sm">Dados encriptados</span>
+        {/* Services Section */}
+        <section className="py-20 lg:py-28 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="inline-block text-sm font-semibold text-primary uppercase tracking-widest mb-4">
+                Nossos Servicos
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
+                Facilitamos o seu processo de legalizacao
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A AIMA disponibiliza diversos servicos para apoiar imigrantes no processo de legalizacao e integracao em Portugal.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#B0C7E9]" />
-                    <span className="text-sm">Disponivel 24/7</span>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 h-12 text-sm font-medium"
+              >
+                <Link href="/servicos" className="flex items-center gap-2">
+                  Ver Todos os Servicos
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-20 lg:py-28 bg-[#4A1D6A]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <span className="inline-block text-sm font-semibold text-[#C74B8E] uppercase tracking-widest mb-4">
+                Como Funciona
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
+                Processo simples em 3 passos
+              </h2>
+              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+                O nosso sistema de agendamento foi desenhado para ser intuitivo e eficiente.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {processSteps.map((step, index) => (
+                <div key={index} className="relative">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 transition-colors">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 bg-[#C74B8E] rounded-xl flex items-center justify-center">
+                        <step.icon className="w-7 h-7 text-white" />
+                      </div>
+                      <span className="text-5xl font-bold text-white/20">
+                        {step.number}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-white/70 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-[#B0C7E9]" />
-                    <span className="text-sm">Suporte dedicado</span>
-                  </div>
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                      <ArrowRight className="w-8 h-8 text-white/20" />
+                    </div>
+                  )}
                 </div>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <p className="text-5xl lg:text-6xl font-bold mb-2">50k+</p>
-                  <p className="text-[#8297AC] text-sm">Agendamentos realizados</p>
-                </div>
-                <div>
-                  <p className="text-5xl lg:text-6xl font-bold mb-2">98%</p>
-                  <p className="text-[#8297AC] text-sm">Satisfacao dos utilizadores</p>
-                </div>
-                <div>
-                  <p className="text-5xl lg:text-6xl font-bold mb-2">24h</p>
-                  <p className="text-[#8297AC] text-sm">Disponibilidade</p>
-                </div>
-                <div>
-                  <p className="text-5xl lg:text-6xl font-bold mb-2">5min</p>
-                  <p className="text-[#8297AC] text-sm">Tempo medio de agendamento</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 lg:py-32 bg-background">
-          <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
-              Pronto para agendar?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Inicie o seu processo de forma rapida e segura. Estamos aqui para ajuda-lo.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-10 h-14 text-base font-medium"
-            >
-              <Link href="/agendar" className="flex items-center gap-3">
-                Comecar Agora
-                <ArrowUpRight className="w-5 h-5" />
-              </Link>
-            </Button>
+        <section className="py-20 lg:py-28 bg-background">
+          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-br from-[#4A1D6A] to-[#7B4B94] rounded-3xl p-10 lg:p-16 relative overflow-hidden">
+              {/* Decorative circles */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
+              
+              <div className="relative z-10">
+                <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
+                  Pronto para agendar?
+                </h2>
+                <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto">
+                  Inicie o seu processo de forma rapida e segura. Estamos aqui para ajuda-lo em cada passo.
+                </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[#C74B8E] text-white hover:bg-[#C74B8E]/90 rounded-full px-10 h-14 text-base font-medium shadow-xl shadow-[#C74B8E]/30"
+                >
+                  <Link href="/agendar" className="flex items-center gap-3">
+                    Comecar Agora
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>

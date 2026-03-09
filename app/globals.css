@@ -4,83 +4,83 @@
 @custom-variant dark (&:is(.dark *));
 
 /* 
-  Color Palette:
-  - Azul principal: #2D67B1 (primary)
-  - Azul escuro: #274569 (foreground/text)
-  - Azul claro: #B0C7E9 (backgrounds/details)
-  - Cinza azulado: #8297AC (secondary/muted)
+  Color Palette - Based on AIMA Logo:
+  - Roxo escuro: #4A1D6A (primary - text, dark sections)
+  - Magenta/Rosa: #C74B8E (accent - buttons, CTAs)
+  - Roxo medio: #7B4B94 (secondary elements)
+  - Rosa claro: #E8D5E8 (light backgrounds, borders)
   - Branco: #FCFEFD (background)
 */
 
 :root {
   --background: #FCFEFD;
-  --foreground: #274569;
+  --foreground: #4A1D6A;
   --card: #FCFEFD;
-  --card-foreground: #274569;
+  --card-foreground: #4A1D6A;
   --popover: #FCFEFD;
-  --popover-foreground: #274569;
-  --primary: #2D67B1;
+  --popover-foreground: #4A1D6A;
+  --primary: #C74B8E;
   --primary-foreground: #FCFEFD;
-  --secondary: #B0C7E9;
-  --secondary-foreground: #274569;
-  --muted: #B0C7E9;
-  --muted-foreground: #8297AC;
-  --accent: #2D67B1;
+  --secondary: #E8D5E8;
+  --secondary-foreground: #4A1D6A;
+  --muted: #F5EEF5;
+  --muted-foreground: #7B4B94;
+  --accent: #C74B8E;
   --accent-foreground: #FCFEFD;
   --destructive: #dc2626;
   --destructive-foreground: #FCFEFD;
-  --border: #B0C7E9;
-  --input: #B0C7E9;
-  --ring: #2D67B1;
-  --radius: 0.5rem;
-  --chart-1: #2D67B1;
-  --chart-2: #274569;
-  --chart-3: #8297AC;
-  --chart-4: #B0C7E9;
+  --border: #E8D5E8;
+  --input: #E8D5E8;
+  --ring: #C74B8E;
+  --radius: 0.625rem;
+  --chart-1: #C74B8E;
+  --chart-2: #4A1D6A;
+  --chart-3: #7B4B94;
+  --chart-4: #E8D5E8;
   --chart-5: #FCFEFD;
-  --sidebar: #274569;
+  --sidebar: #4A1D6A;
   --sidebar-foreground: #FCFEFD;
-  --sidebar-primary: #2D67B1;
+  --sidebar-primary: #C74B8E;
   --sidebar-primary-foreground: #FCFEFD;
-  --sidebar-accent: #8297AC;
+  --sidebar-accent: #7B4B94;
   --sidebar-accent-foreground: #FCFEFD;
-  --sidebar-border: #8297AC;
-  --sidebar-ring: #2D67B1;
+  --sidebar-border: #7B4B94;
+  --sidebar-ring: #C74B8E;
 }
 
 .dark {
-  --background: #274569;
+  --background: #4A1D6A;
   --foreground: #FCFEFD;
-  --card: #274569;
+  --card: #4A1D6A;
   --card-foreground: #FCFEFD;
-  --popover: #274569;
+  --popover: #4A1D6A;
   --popover-foreground: #FCFEFD;
-  --primary: #B0C7E9;
-  --primary-foreground: #274569;
-  --secondary: #8297AC;
+  --primary: #C74B8E;
+  --primary-foreground: #FCFEFD;
+  --secondary: #7B4B94;
   --secondary-foreground: #FCFEFD;
-  --muted: #8297AC;
-  --muted-foreground: #B0C7E9;
-  --accent: #B0C7E9;
-  --accent-foreground: #274569;
+  --muted: #7B4B94;
+  --muted-foreground: #E8D5E8;
+  --accent: #C74B8E;
+  --accent-foreground: #FCFEFD;
   --destructive: #dc2626;
   --destructive-foreground: #FCFEFD;
-  --border: #8297AC;
-  --input: #8297AC;
-  --ring: #B0C7E9;
-  --chart-1: #B0C7E9;
-  --chart-2: #8297AC;
-  --chart-3: #2D67B1;
-  --chart-4: #274569;
+  --border: #7B4B94;
+  --input: #7B4B94;
+  --ring: #C74B8E;
+  --chart-1: #C74B8E;
+  --chart-2: #7B4B94;
+  --chart-3: #E8D5E8;
+  --chart-4: #4A1D6A;
   --chart-5: #FCFEFD;
-  --sidebar: #274569;
+  --sidebar: #4A1D6A;
   --sidebar-foreground: #FCFEFD;
-  --sidebar-primary: #B0C7E9;
-  --sidebar-primary-foreground: #274569;
-  --sidebar-accent: #8297AC;
+  --sidebar-primary: #C74B8E;
+  --sidebar-primary-foreground: #FCFEFD;
+  --sidebar-accent: #7B4B94;
   --sidebar-accent-foreground: #FCFEFD;
-  --sidebar-border: #8297AC;
-  --sidebar-ring: #B0C7E9;
+  --sidebar-border: #7B4B94;
+  --sidebar-ring: #C74B8E;
 }
 
 @theme inline {
@@ -155,4 +155,10 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--foreground);
+}
+
+/* Selection color */
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
 }

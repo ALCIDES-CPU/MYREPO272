@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowRight, HelpCircle } from "lucide-react"
 
 const faqs = [
   {
@@ -70,16 +70,18 @@ export default function FAQPage() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="py-20 lg:py-28 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="py-20 lg:py-28 bg-gradient-to-br from-[#4A1D6A] to-[#7B4B94] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#C74B8E]/20 rounded-full blur-3xl" />
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
-              <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">
+              <span className="inline-block text-sm font-semibold text-[#C74B8E] uppercase tracking-widest mb-4">
                 Duvidas Frequentes
-              </p>
-              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+              </span>
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
                 Perguntas Frequentes
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-white/80 leading-relaxed">
                 Encontre respostas para as perguntas mais comuns sobre o processo de agendamento AIMA.
               </p>
             </div>
@@ -88,14 +90,17 @@ export default function FAQPage() {
 
         {/* FAQ Section */}
         <section className="py-20 lg:py-28">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-b border-border">
-                  <AccordionTrigger className="text-left py-6 text-base font-medium hover:no-underline text-foreground">
-                    {faq.question}
+                  <AccordionTrigger className="text-left py-6 text-base font-medium hover:no-underline text-foreground hover:text-primary transition-colors">
+                    <div className="flex items-start gap-4">
+                      <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>{faq.question}</span>
+                    </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-6 pl-9">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -103,32 +108,36 @@ export default function FAQPage() {
             </Accordion>
 
             {/* CTA Section */}
-            <div className="mt-16 bg-[#274569] text-[#FCFEFD] rounded-2xl p-10 lg:p-12 text-center">
-              <h3 className="text-2xl font-bold tracking-tight mb-4">
-                Nao encontrou a resposta?
-              </h3>
-              <p className="text-[#B0C7E9] mb-8 max-w-md mx-auto">
-                Entre em contacto connosco atraves dos nossos canais de apoio. Estamos disponiveis para ajudar.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  asChild
-                  className="bg-[#FCFEFD] text-[#274569] hover:bg-[#B0C7E9] rounded-full px-8 h-11 text-sm font-medium"
-                >
-                  <Link href="/contactos" className="flex items-center gap-2">
-                    Ver Contactos
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-[#8297AC] text-[#FCFEFD] hover:bg-[#8297AC]/20 rounded-full px-8 h-11 text-sm font-medium"
-                >
-                  <Link href="/agendar">
-                    Fazer Agendamento
-                  </Link>
-                </Button>
+            <div className="mt-16 bg-gradient-to-br from-[#4A1D6A] to-[#7B4B94] rounded-3xl p-10 lg:p-12 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold tracking-tight text-white mb-4">
+                  Nao encontrou a resposta?
+                </h3>
+                <p className="text-white/70 mb-8 max-w-md mx-auto">
+                  Entre em contacto connosco atraves dos nossos canais de apoio. Estamos disponiveis para ajudar.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    asChild
+                    className="bg-[#C74B8E] text-white hover:bg-[#C74B8E]/90 rounded-full px-8 h-11 text-sm font-medium shadow-lg shadow-[#C74B8E]/30"
+                  >
+                    <Link href="/contactos" className="flex items-center gap-2">
+                      Ver Contactos
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-11 text-sm font-medium"
+                  >
+                    <Link href="/agendar">
+                      Fazer Agendamento
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
