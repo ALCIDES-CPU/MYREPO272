@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X, User, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -49,13 +48,10 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 md:h-[4.5rem]">
           <Link href="/" className="flex items-center">
-            <Image
+            <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AIMA%20WHIT-IsJtsie9npT4L17xRWtuIA3HZoF2y4.png"
               alt="AIMA Logo"
-              width={160}
-              height={48}
-              className="h-8 sm:h-10 md:h-12"
-              style={{ width: 'auto', height: 'auto' }}
+              className="h-8 sm:h-10 md:h-12 w-auto"
             />
           </Link>
 
