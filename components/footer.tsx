@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowRight, Mail, Phone } from "lucide-react"
 
 const footerLinks = [
   { href: "/servicos", label: "Servicos" },
@@ -32,56 +32,90 @@ const partners = [
     alt: "Portugal 2020",
     width: 240,
   },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aima_horizontal_cor-rIl9RarT6CEu1ZKBjIgyK63jrgQiBj.png",
-    alt: "AIMA",
-    width: 180,
-  },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-[#274569] text-[#FCFEFD] mt-auto">
-      {/* Contact Section */}
-      <div className="border-b border-[#8297AC]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <footer className="bg-[#4A1D6A] text-white mt-auto">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top Section */}
+        <div className="py-16 lg:py-20 border-b border-white/10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Left Column - Logo & Info */}
             <div>
-              <p className="text-xs font-medium uppercase tracking-widest text-[#8297AC] mb-4">
-                Contacto
+              <img 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aima_horizontal_cor-dp99dOkFSZoOboT9H50LBTmCxeGkVO.png"
+                alt="AIMA"
+                className="h-12 w-auto mb-6 brightness-0 invert"
+              />
+              <p className="text-white/70 leading-relaxed max-w-md mb-8">
+                Agencia para a Integracao, Migracoes e Asilo. Estamos disponiveis para esclarecer todas as suas duvidas sobre o processo de agendamento.
               </p>
-              <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">
-                Precisa de ajuda?
-              </h2>
-              <p className="text-[#B0C7E9] leading-relaxed max-w-md">
-                Estamos disponiveis para esclarecer todas as suas duvidas sobre o processo de agendamento.
-              </p>
+              <div className="flex flex-col gap-3">
+                <Link 
+                  href="mailto:info@aimagovpt.com"
+                  className="flex items-center gap-3 text-white/80 hover:text-[#C74B8E] transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  info@aimagovpt.com
+                </Link>
+                <div className="flex items-center gap-3 text-white/80">
+                  <Phone className="w-5 h-5" />
+                  +351 213 585 500
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col gap-4 lg:items-end">
-              <Link 
-                href="mailto:info@aimagovpt.com"
-                className="text-xl lg:text-2xl font-medium hover:text-[#B0C7E9] transition-colors flex items-center gap-2"
-              >
-                info@aimagovpt.com
-                <ArrowUpRight className="w-5 h-5" />
-              </Link>
-              <p className="text-[#8297AC] text-sm">+351 213 585 500</p>
+
+            {/* Right Column - Quick Links */}
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-white/50 mb-6">
+                  Links Rapidos
+                </h3>
+                <ul className="space-y-4">
+                  {footerLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-white/70 hover:text-[#C74B8E] transition-colors flex items-center gap-2 group"
+                      >
+                        {link.label}
+                        <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-white/50 mb-6">
+                  Informacoes
+                </h3>
+                <ul className="space-y-4">
+                  <li className="text-white/70">
+                    <span className="block text-white/50 text-sm mb-1">Horario</span>
+                    Dias uteis: 09:00 - 16:30
+                  </li>
+                  <li className="text-white/70">
+                    <span className="block text-white/50 text-sm mb-1">Sede</span>
+                    Lisboa, Portugal
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Partners Section */}
-      <div className="border-b border-[#8297AC]/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
-          <p className="text-xs font-medium uppercase tracking-widest text-[#8297AC] mb-8 text-center">
+        {/* Partners Section */}
+        <div className="py-10 border-b border-white/10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-8 text-center">
             Apoios e Financiamento
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4">
             {partners.map((partner, i) => (
               <div
                 key={i}
-                className="bg-background rounded-lg p-3 hover:shadow-md transition-shadow"
+                className="bg-white rounded-lg p-3 hover:shadow-lg transition-shadow"
               >
                 <Image
                   src={partner.src}
@@ -94,31 +128,22 @@ export function Footer() {
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              AIMA
-            </Link>
-            <div className="hidden md:flex items-center gap-6">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-[#B0C7E9] hover:text-[#FCFEFD] transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
+        {/* Bottom Section */}
+        <div className="py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-white/50">
+              &copy; {new Date().getFullYear()} AIMA - Agencia para a Integracao, Migracoes e Asilo. Todos os direitos reservados.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">
+                Politica de Privacidade
+              </Link>
+              <Link href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">
+                Termos de Uso
+              </Link>
             </div>
           </div>
-          
-          <p className="text-xs text-[#8297AC] text-center md:text-right">
-            &copy; {new Date().getFullYear()} AIMA - Agencia para a Integracao, Migracoes e Asilo.
-          </p>
         </div>
       </div>
     </footer>
