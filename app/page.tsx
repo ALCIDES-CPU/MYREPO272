@@ -100,7 +100,10 @@ export default function HomePage() {
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
                 Agende o seu atendimento na{" "}
-                <span className="text-[#420068]">AIMA</span>
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-[#C74B8E] via-[#E87AB0] to-[#C74B8E] bg-clip-text text-transparent font-extrabold">AIMA</span>
+                  <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#C74B8E] to-[#E87AB0] rounded-full"></span>
+                </span>
               </h1>
 
               <p className="text-lg lg:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
@@ -123,7 +126,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm"
+                  className="border-purple/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm"
                 >
                   <Link href="/servicos">
                     Ver Servicos
