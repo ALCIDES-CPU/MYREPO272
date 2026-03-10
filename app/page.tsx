@@ -76,8 +76,8 @@ export default function HomePage() {
           {/* Background with gradient overlay */}
           <div className="absolute inset-0">
             <Image
-              src="/images/banner.jpeg"
-              alt="AIMA Services"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/europa-niuCtq5rFyB8PxZvaoym7y8QO0dSME.jpg"
+              alt="AIMA - Agencia para a Integracao, Migracoes e Asilo"
               fill
               priority
               className="object-cover"
@@ -126,7 +126,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-purple/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm"
+                  className="border-2 border-white/70 text-white hover:bg-purple hover:text-[#4A1D6A] rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm transition-all"
                 >
                   <Link href="/servicos">
                     Ver Servicos
