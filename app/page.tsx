@@ -76,8 +76,8 @@ export default function HomePage() {
           {/* Background with gradient overlay */}
           <div className="absolute inset-0">
             <Image
-              src="/images/banner.jpeg"
-              alt="AIMA Services"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/europa-niuCtq5rFyB8PxZvaoym7y8QO0dSME.jpg"
+              alt="AIMA - Agencia para a Integracao, Migracoes e Asilo"
               fill
               priority
               className="object-cover"
