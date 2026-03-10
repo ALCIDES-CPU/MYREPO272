@@ -73,19 +73,15 @@ export default function HomePage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-          {/* Background with gradient overlay */}
+          {/* Background with banner image */}
           <div className="absolute inset-0">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/europa-niuCtq5rFyB8PxZvaoym7y8QO0dSME.jpg"
+              src="/images/new-banner.png"
               alt="AIMA - Agencia para a Integracao, Migracoes e Asilo"
               fill
               priority
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A]/95 via-[#4A1D6A]/80 to-[#4A1D6A]/60" />
-            {/* Decorative elements */}
-            <div className="absolute top-20 right-20 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#7B4B94]/20 rounded-full blur-3xl" />
           </div>
 
           {/* Content */}
