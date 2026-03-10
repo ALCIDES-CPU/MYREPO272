@@ -76,14 +76,12 @@ export default function HomePage() {
           {/* Background with banner image */}
           <div className="absolute inset-0">
             <Image
-              src="/images/banner.jpg"
+              src="/images/banner.svg"
               alt="AIMA - Agencia para a Integracao, Migracoes e Asilo"
               fill
               priority
-              className="object-cover object-right"
+              className="object-cover"
             />
-            {/* Gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/90 to-transparent" />
           </div>
 
           {/* Content */}
