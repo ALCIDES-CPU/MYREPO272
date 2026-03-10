@@ -92,17 +92,20 @@ export default function HomePage() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
-                <span className="w-2 h-2 bg-[#C74B8E] rounded-full animate-pulse" />
+                <span className="w-2 h-2 bg-[#400174] rounded-full animate-pulse" />
                 <span className="text-sm font-medium text-white/90">
-                  Plataforma Oficial de Agendamento
+                  Plataforma Oficial de Agendamento na AIMA
                 </span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Agende o seu atendimento de forma{" "}
-                <span className="text-[#C74B8E]">simples e rapida</span>
+                Agende o seu atendimento na{" "}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-[#C83564] via-[#3F1F6F] to-[#C83564] bg-clip-text text-transparent font-extrabold">AIMA</span>
+                  <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-[#C74B8E] to-[#E87AB0] rounded-full"></span>
+                </span>
               </h1>
-              
+
               <p className="text-lg lg:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
                 Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe o seu processo online, sem filas de espera.
               </p>
@@ -111,7 +114,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-[#C74B8E] text-white hover:bg-[#C74B8E]/90 rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#C74B8E]/30"
+                  className="bg-[#400683] text-white hover:bg-[#C74B8E]/90 rounded-full px-8 h-14 text-base font-medium shadow-xl shadow-[#C74B8E]/30"
                 >
                   <Link href="/agendar" className="flex items-center gap-3">
                     Agendar Agora
@@ -123,7 +126,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm"
+                  className="border-purple/30 text-white hover:bg-white/10 rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm"
                 >
                   <Link href="/servicos">
                     Ver Servicos
@@ -271,7 +274,7 @@ export default function HomePage() {
               {/* Decorative circles */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
-              
+
               <div className="relative z-10">
                 <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
                   Pronto para agendar?
