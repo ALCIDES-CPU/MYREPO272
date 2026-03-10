@@ -73,23 +73,21 @@ export default function HomePage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-          {/* Background with gradient overlay */}
+          {/* Background with banner image */}
           <div className="absolute inset-0">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/europa-niuCtq5rFyB8PxZvaoym7y8QO0dSME.jpg"
+              src="/images/banner.svg"
               alt="AIMA - Agencia para a Integracao, Migracoes e Asilo"
               fill
               priority
-              className="object-cover"
+              className="object-cover object-right"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A]/95 via-[#4A1D6A]/80 to-[#4A1D6A]/60" />
-            {/* Decorative elements */}
-            <div className="absolute top-20 right-20 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#7B4B94]/20 rounded-full blur-3xl" />
+            {/* Gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#4A1D6A] via-[#4A1D6A]/90 to-transparent" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 xl:px-16 py-20 lg:py-32">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
                 <span className="w-2 h-2 bg-[#400174] rounded-full animate-pulse" />
@@ -157,7 +155,7 @@ export default function HomePage() {
 
         {/* Stats Section */}
         <section className="py-16 bg-muted/50 border-y border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
@@ -175,15 +173,15 @@ export default function HomePage() {
 
         {/* Services Section */}
         <section className="py-20 lg:py-28 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16">
+            <div className="text-left mb-16">
               <span className="inline-block text-sm font-semibold text-primary uppercase tracking-widest mb-4">
                 Nossos Servicos
               </span>
               <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
                 Facilitamos o seu processo de legalizacao
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl">
                 A AIMA disponibiliza diversos servicos para apoiar imigrantes no processo de legalizacao e integracao em Portugal.
               </p>
             </div>
@@ -207,7 +205,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            <div className="text-left mt-12">
               <Button
                 asChild
                 variant="outline"
@@ -224,15 +222,15 @@ export default function HomePage() {
 
         {/* Process Section */}
         <section className="py-20 lg:py-28 bg-[#4A1D6A]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16">
+            <div className="text-left mb-16">
               <span className="inline-block text-sm font-semibold text-[#C74B8E] uppercase tracking-widest mb-4">
                 Como Funciona
               </span>
               <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
                 Processo simples em 3 passos
               </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              <p className="text-lg text-white/70 max-w-2xl">
                 O nosso sistema de agendamento foi desenhado para ser intuitivo e eficiente.
               </p>
             </div>
@@ -269,17 +267,17 @@ export default function HomePage() {
 
         {/* CTA Section */}
         <section className="py-20 lg:py-28 bg-background">
-          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-[#4A1D6A] to-[#7B4B94] rounded-3xl p-10 lg:p-16 relative overflow-hidden">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16">
+            <div className="bg-gradient-to-br from-[#4A1D6A] to-[#7B4B94] rounded-3xl p-10 lg:p-16 relative overflow-hidden max-w-4xl">
               {/* Decorative circles */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#C74B8E]/20 rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
 
-              <div className="relative z-10">
+              <div className="relative z-10 text-left">
                 <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4">
                   Pronto para agendar?
                 </h2>
-                <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto">
+                <p className="text-lg text-white/80 mb-10 max-w-xl">
                   Inicie o seu processo de forma rapida e segura. Estamos aqui para ajuda-lo em cada passo.
                 </p>
                 <Button
