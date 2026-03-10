@@ -126,7 +126,7 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white/70 text-white hover:bg-white hover:text-[#4A1D6A] rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm transition-all"
+                  className="border-2 border-white/70 text-white hover:bg-purple hover:text-[#4A1D6A] rounded-full px-8 h-14 text-base font-medium backdrop-blur-sm transition-all"
                 >
                   <Link href="/servicos">
                     Ver Servicos
