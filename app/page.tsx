@@ -96,50 +96,30 @@ export default function HomePage() {
                 </span>
               </div>
 
-<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-  Agende o seu atendimento na{" "}
+<span className="relative inline-block ml-2">
   
-  <span className="relative inline-block">
-    
-    {/* Texto AIMA */}
-    <span className="
-      relative z-10
-      bg-gradient-to-r 
-      from-[#C83564] 
-      via-[#6A2FA0] 
-      to-[#C83564] 
-      bg-clip-text 
-      text-transparent 
-      font-extrabold
-      drop-shadow-[0_2px_6px_rgba(200,53,100,0.45)]
-    ">
-      AIMA
-    </span>
+  <span className="
+    absolute inset-0
+    blur-xl
+    bg-[#C83564]
+    opacity-40
+  "></span>
 
-    {/* Glow atrás */}
-    <span className="
-      absolute inset-0
-      bg-gradient-to-r 
-      from-[#C83564]/30 
-      via-[#6A2FA0]/30 
-      to-[#C83564]/30
-      blur-xl
-      opacity-70
-    "></span>
-
-    {/* underline */}
-    <span className="
-      absolute -bottom-2 left-0 right-0
-      h-[3px]
-      bg-gradient-to-r
-      from-[#C83564]
-      via-[#6A2FA0]
-      to-[#C83564]
-      rounded-full
-    "></span>
-
+  <span className="
+    relative
+    bg-gradient-to-r
+    from-[#FF4F87]
+    via-[#C83564]
+    to-[#7A3FB3]
+    bg-clip-text
+    text-transparent
+    font-extrabold
+    drop-shadow-[0_4px_12px_rgba(200,53,100,0.6)]
+  ">
+    AIMA
   </span>
-</h1>
+
+</span>
 
               <p className="text-lg lg:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
                 Processo de legalizacao simplificado. Agende, submeta documentos e acompanhe o seu processo online, sem filas de espera.
