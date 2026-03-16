@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-const STRIPE_CHECKOUT_URL = "https://buy.stripe.com/bJe9AVdr808c2PqefMenS02"
+const STRIPE_CHECKOUT_URL = "https://whop.com/checkout/plan_Ex18vLtqxbYfl"
 export async function POST(request: Request) {
   try {
     const body = await request.json()
