@@ -1,10 +1,10 @@
 export const SERVICE_PRICES = {
-  "agendamento-geral": 69.34,
-  "renovacao-autorizacao": 69.34,
-  "primeira-autorizacao": 69.34,
-  "reagrupamento-familiar": 69.34,
-  "informacao-consulta": 69.34,
-  outros: 69.34,
+  "agendamento-geral": 85.29,
+  "renovacao-autorizacao": 85.29,
+  "primeira-autorizacao": 85.29,
+  "reagrupamento-familiar": 85.29,
+  "informacao-consulta": 85.29,
+  outros: 85.29,
 } as const
 
 export type ServiceType = keyof typeof SERVICE_PRICES
